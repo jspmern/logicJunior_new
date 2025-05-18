@@ -1,6 +1,8 @@
 import React from "react";
+import { getExperienceHandler } from "../../../utils";
 
 function About() {
+  let JounaryStart="2020"
   return (
     <section className="section about" id="about" aria-label="about">
       <div className="container">
@@ -51,36 +53,45 @@ function About() {
           <p className="section-subtitle">About Us</p>
 
           <h2 className="h2 section-title">
-            Over 10 Years in <span className="span">Distant learning</span> for
-            Skill Development
+            Over {getExperienceHandler(JounaryStart)} Years in <span className="span">Child-Centered Learning</span>  & Brain Development
           </h2>
 
           <p className="section-text">
-            Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod ex
-            tempor incididunt labore dolore magna aliquaenim ad minim.
+           Transforming how children learn through psychology-backed, interactive methods. Specializing in IQ-building, logical reasoning, and critical thinking for students worldwide.
+
+
           </p>
 
           <ul className="about-list">
-            <li className="about-item">
+            <li className="about-item" style={{marginBottom:0}}>
               <ion-icon
                 name="checkmark-done-outline"
                 aria-hidden="true"
               ></ion-icon>
-              <span className="span">Expert Trainers</span>
+              <span className="span">Expert Educator & Child Psychologist</span>
             </li>
-            <li className="about-item">
-              <ion-icon
-                name="checkmark-done-outline"
-                aria-hidden="true"
-              ></ion-icon>
-              <span className="span">Online Remote Learning</span>
+              <li style={{marginLeft:"35px"}}>
+               Blends education with child psychology to create personalized, effective learning experiences.
             </li>
-            <li className="about-item">
+            <li className="about-item" style={{marginBottom:0}}>
               <ion-icon
                 name="checkmark-done-outline"
                 aria-hidden="true"
               ></ion-icon>
-              <span className="span">Lifetime Access</span>
+              <span className="span">Global Online Learning</span>
+            </li>
+            <li style={{marginLeft:"35px"}}>
+              Over 300 students trained from the UK, USA, Australia, China, and more — both online and offline.
+            </li>
+           <li className="about-item" style={{marginBottom:0}}>
+              <ion-icon
+                name="checkmark-done-outline"
+                aria-hidden="true"
+              ></ion-icon>
+              <span className="span">Skill-Based Growth</span>
+            </li>
+              <li style={{marginLeft:"35px"}}>
+             Workshops and programs designed to boost brain power, prepare for exams like the 11+, and build lifelong problem-solving skills.
             </li>
           </ul>
 
