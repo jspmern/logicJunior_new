@@ -68,22 +68,8 @@ function Header() {
           </nav>
 
           <div class="header-actions">
-            <button
-              class="header-action-btn"
-              aria-label="toggle search"
-              title="Search"
-            >
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-            </button>
-
-            <button class="header-action-btn" aria-label="cart" title="Cart">
-              <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
-
-              <span class="btn-badge">0</span>
-            </button>
-
             <a href="#" class="btn has-before">
-              <span class="span">Try for free</span>
+              <span class="span">Book a FREE DEMO</span>
 
               <ion-icon
                 name="arrow-forward-outline"

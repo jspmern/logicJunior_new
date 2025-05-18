@@ -9,18 +9,13 @@ function Hero() {
     >
       <div className="container">
         <div className="hero-content">
-          <h1 className="h1 section-title wave-once">
-            {"The Best Program to Enroll for Exchange".split("").map((char, i) => (
-              <span key={i} style={{ animationDelay: `${i * 0.05}s` }}>
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
+          <h1 className="h1 section-title">
+            Let's  Create Future Ready Kids With <span className="span">Logic Junior</span>
           </h1>
 
-
-          <p className="hero-text fade-in-delay-1">
-            Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-            officia deserunt mollit.
+          <p className="hero-text">
+            Discover thousands of fun and interactive learning activities to
+            support your child&#39;s growth and learning process.
           </p>
 
           <a href="#" className="btn has-before fade-in-delay-2">

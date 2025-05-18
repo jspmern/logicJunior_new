@@ -505,6 +505,7 @@ body {
 }
 
 .category-card {
+  height: 350px;
   padding: 50px 30px;
   text-align: center;
   border-radius: var(--radius-5);
