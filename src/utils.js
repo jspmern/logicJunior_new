@@ -29,7 +29,9 @@
                 }
             ],
               isTopCourse:true,
-              thumbnail:"/assets/images/category-1.svg"
+              thumbnail:"/assets/images/category-1.svg",
+              duration:"8 Hours",
+              badge:"Beginner"
           },
           {
             "id": "VR",
@@ -52,7 +54,9 @@
                 }
             ],
             isTopCourse:true,
-           thumbnail:"/assets/images/category-2.svg"
+           thumbnail:"/assets/images/category-2.svg",
+              duration:"8 Hours",
+              badge:"Beginner"
           },
           {
             "id": "Math",
@@ -96,14 +100,18 @@
                 }
             ],
               isTopCourse:true,
-              thumbnail:"/assets/images/category-3.svg"
+              thumbnail:"/assets/images/category-3.svg",
+              duration:"11 Hours",
+              badge:"Intermediate"
           },  
           {
             "id": "ds101",
             "name": "IQ and Critical Thinking",
             "title": "Introduction to Python",
             "image": "path_to_image_3.jpg",
-            "description": "Start your Python journey with this beginner-friendly course."
+            "description": "Start your Python journey with this beginner-friendly course.",
+              duration:"8 Hours",
+              badge:"Beginner"
           },
           {
             "id": "ds102",
@@ -112,7 +120,9 @@
             "image": "path_to_image_4.jpg",
             "description": "Learn the fundamentals of machine learning algorithms.",
               isTopCourse:true,
-              thumbnail:"/assets/images/category-4.svg"
+              thumbnail:"/assets/images/category-4.svg",
+              duration:"10 Hours",
+              badge:"Advanced"
           }
         ]
 
