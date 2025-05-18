@@ -4,8 +4,8 @@ function Courses() {
   return (
     <section className="section course" id="courses" aria-label="course">
       <div className="container">
-        <p className="section-subtitle">Popular Courses</p>
-        <h2 className="h2 section-title">Pick A Course To Get Started</h2>
+        <p className="section-subtitle">Categories</p>
+        <h2 className="h2 section-title"> Online Classes For Remote Learning</h2>
         <ul className="grid-list">
           <li>
             <div className="course-card">
