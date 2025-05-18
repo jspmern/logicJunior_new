@@ -10,13 +10,12 @@ function Hero() {
       <div className="container">
         <div className="hero-content">
           <h1 className="h1 section-title">
-            The Best Program to <span className="span">Enroll</span> for
-            Exchange
+             Let's  Create Future Ready Kids With <span className="span">Logic Junior</span>  
           </h1>
 
           <p className="hero-text">
-            Excepteur sint occaecat cupidatat non proident sunt in culpa qui
-            officia deserunt mollit.
+          Discover thousands of fun and interactive learning activities to
+              support your child&#39;s growth and learning process.
           </p>
 
           <a href="#" className="btn has-before">
