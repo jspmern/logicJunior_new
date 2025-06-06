@@ -7,6 +7,7 @@ import locationIcon from "./assest/location.png";
 import emailIcon from "./assest/email.png";
 import phoneIcon from "./assest/phone.png";
 import shapeImg from "./assest/shape.png";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -94,12 +95,12 @@ const Contact = () => {
 
             <div className="socialMedia">
               <p>Connect with us :</p>
-              <div className="socialIcons">
-                <a href="#"><i className="fab fa-facebook-f"></i></a>
-                <a href="#"><i className="fab fa-twitter"></i></a>
-                <a href="#"><i className="fab fa-instagram"></i></a>
-                <a href="#"><i className="fab fa-linkedin-in"></i></a>
-              </div>
+             <div className="socialIcons">
+  <a href="#"><FaFacebookF /></a>
+  <a href="#"><FaTwitter /></a>
+  <a href="#"><FaInstagram /></a>
+  <a href="#"><FaLinkedinIn /></a>
+</div>
             </div>
           </div>
 

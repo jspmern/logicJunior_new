@@ -1,34 +1,34 @@
 import React from "react";
+import CountUp from "react-countup";
+
+const statsData = [
+  { value: 29300, label: "Student Enrolled", color: "170, 75%, 41%" },
+  { value: 32400, label: "Class Completed", color: "351, 83%, 61%" },
+  { value: 100, label: "Satisfaction Rate", color: "260, 100%, 67%", suffix: "%" },
+  { value: 354, label: "Top Instructors", color: "42, 94%, 55%", suffix: "+" },
+];
 
 function State() {
   return (
     <section className="section stats" aria-label="stats">
       <div className="container">
         <ul className="grid-list">
-          <li>
-            <div className="stats-card" style={{ "--color": "170, 75%, 41%" }}>
-              <h3 className="card-title">29.3k</h3>
-              <p className="card-text">Student Enrolled</p>
-            </div>
-          </li>
-          <li>
-            <div className="stats-card" style={{ "--color": "351, 83%, 61%" }}>
-              <h3 className="card-title">32.4K</h3>
-              <p className="card-text">Class Completed</p>
-            </div>
-          </li>
-          <li>
-            <div className="stats-card" style={{ "--color": "260, 100%, 67%" }}>
-              <h3 className="card-title">100%</h3>
-              <p className="card-text">Satisfaction Rate</p>
-            </div>
-          </li>
-          <li>
-            <div className="stats-card" style={{ "--color": "42, 94%, 55%" }}>
-              <h3 className="card-title">354+</h3>
-              <p className="card-text">Top Instructors</p>
-            </div>
-          </li>
+          {statsData.map((stat, index) => (
+            <li key={index}>
+              <div className="stats-card" style={{ "--color": stat.color }}>
+                <h3 className="card-title">
+                  <CountUp
+                    start={0}
+                    end={stat.value}
+                    duration={2.5}
+                    separator=","
+                    suffix={stat.suffix || ""}
+                  />
+                </h3>
+                <p className="card-text">{stat.label}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
