@@ -33,7 +33,7 @@ function App() {
                 <State />
                 {/* <Blog /> */}
                 <Contact />
-                <Footer />
+                {/* <Footer /> */}
                 <BackToTop />
               </article>
             }
