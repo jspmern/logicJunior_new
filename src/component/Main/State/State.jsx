@@ -1,5 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const statsData = [
   { value: 29300, label: "Student Enrolled", color: "170, 75%, 41%" },
@@ -9,21 +10,30 @@ const statsData = [
 ];
 
 function State() {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once
+    threshold: 0.3,     // 30% of the section should be visible
+  });
+
   return (
-    <section className="section stats" aria-label="stats">
+    <section className="section stats" aria-label="stats" ref={ref}>
       <div className="container">
         <ul className="grid-list">
           {statsData.map((stat, index) => (
             <li key={index}>
               <div className="stats-card" style={{ "--color": stat.color }}>
                 <h3 className="card-title">
-                  <CountUp
-                    start={0}
-                    end={stat.value}
-                    duration={2.5}
-                    separator=","
-                    suffix={stat.suffix || ""}
-                  />
+                  {inView ? (
+                    <CountUp
+                      start={0}
+                      end={stat.value}
+                      duration={2.5}
+                      separator=","
+                      suffix={stat.suffix || ""}
+                    />
+                  ) : (
+                    0
+                  )}
                 </h3>
                 <p className="card-text">{stat.label}</p>
               </div>

@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import styles from "./contact.module.css";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,48 +20,62 @@ const Contact = () => {
     message: "",
   });
 
-  useEffect(() => {
-    const inputs = document.querySelectorAll(".input");
+  const [errors, setErrors] = useState({});
 
-    const focusFunc = function () {
-      let parent = this.parentNode;
-      parent.classList.add("focus");
-    };
+  const validate = (fieldValues = formData) => {
+    const newErrors = {};
 
-    const blurFunc = function () {
-      let parent = this.parentNode;
-      if (this.value === "") {
-        parent.classList.remove("focus");
-      }
-    };
+    if (!fieldValues.name.trim()) newErrors.name = "Name is required";
+    if (!fieldValues.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fieldValues.email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+    if (!fieldValues.phone.trim()) newErrors.phone = "Phone is required";
+    if (!fieldValues.message.trim()) newErrors.message = "Message is required";
 
-    inputs.forEach((input) => {
-      input.addEventListener("focus", focusFunc);
-      input.addEventListener("blur", blurFunc);
-    });
-
-    return () => {
-      inputs.forEach((input) => {
-        input.removeEventListener("focus", focusFunc);
-        input.removeEventListener("blur", blurFunc);
-      });
-    };
-  }, []);
+    return newErrors;
+  };
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
+    }));
+
+    // Live remove error
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: "",
+    }));
+  };
+
+  const handlePhoneChange = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      phone: value,
+    }));
+
+    // Remove phone error live
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      phone: "",
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/contact", formData);
+      await axios.post("http://localhost:5000/api/contact", formData);
       toast.success("Message sent successfully! 🎉", { autoClose: 3000 });
       setFormData({ name: "", email: "", phone: "", message: "" });
+      setErrors({});
     } catch (err) {
       console.error(err);
       toast.error("Failed to send message. ❌", { autoClose: 3000 });
@@ -68,96 +85,105 @@ const Contact = () => {
   return (
     <>
       <ToastContainer />
-      <div className="contactContainer">
-        <span className="bigCircle"></span>
-        <img src={shapeImg} className="square" alt="" />
-        <div className="contactFormWrapper">
-          <div className="contactInfo">
-            <h3 className="title">Let's get in touch</h3>
-            <p className="text">
+      <div className={styles.contactContainer}>
+        <span className={styles.bigCircle}></span>
+        <img src={shapeImg} className={styles.square} alt="" />
+        <div className={styles.contactFormWrapper}>
+          <div className={styles.contactInfo}>
+            <h3 className={styles.title}>Let's get in touch</h3>
+            <p className={styles.text}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum adipisci recusandae praesentium dicta!
             </p>
 
-            <div className="info">
-              <div className="information">
-                <img src={locationIcon} className="icon" alt="" />
+            <div className={styles.info}>
+              <div className={styles.information}>
+                <img src={locationIcon} className={styles.icon} alt="" />
                 <p>92 Cherry Drive Uniondale, NY 11553</p>
               </div>
-              <div className="information">
-                <img src={emailIcon} className="icon" alt="" />
+              <div className={styles.information}>
+                <img src={emailIcon} className={styles.icon} alt="" />
                 <p>lorem@ipsum.com</p>
               </div>
-              <div className="information">
-                <img src={phoneIcon} className="icon" alt="" />
+              <div className={styles.information}>
+                <img src={phoneIcon} className={styles.icon} alt="" />
                 <p>123-456-789</p>
               </div>
             </div>
 
-            <div className="socialMedia">
+            <div className={styles.socialMedia}>
               <p>Connect with us :</p>
-             <div className="socialIcons">
-  <a href="#"><FaFacebookF /></a>
-  <a href="#"><FaTwitter /></a>
-  <a href="#"><FaInstagram /></a>
-  <a href="#"><FaLinkedinIn /></a>
-</div>
+              <div className={styles.socialIcons}>
+                <a href="#"><FaFacebookF /></a>
+                <a href="#"><FaTwitter /></a>
+                <a href="#"><FaInstagram /></a>
+                <a href="#"><FaLinkedinIn /></a>
+              </div>
             </div>
           </div>
 
-          <div className="contactForm">
-            <span className="circle one"></span>
-            <span className="circle two"></span>
+          <div className={styles.contactForm}>
+            <span className={`${styles.circle} ${styles.one}`}></span>
+            <span className={`${styles.circle} ${styles.two}`}></span>
 
             <form autoComplete="off" onSubmit={handleSubmit}>
-              <h3 className="title">Contact us</h3>
-              <div className="inputContainer">
+              <h3 className={styles.title}>Contact us</h3>
+
+              <div className={styles.inputContainer}>
                 <input
                   type="text"
                   name="name"
-                  className="input"
+                  className={`${styles.input} ${styles.whitePlaceholder}`}
                   value={formData.name}
                   onChange={handleChange}
-                  required
+                  placeholder="Name"
+                  style={{ fontSize: "16px" }}
                 />
-                <label>Username</label>
-                <span>Username</span>
+                {errors.name && <p className={styles.error}>{errors.name}</p>}
               </div>
-              <div className="inputContainer">
+
+              <div className={styles.inputContainer}>
                 <input
                   type="email"
                   name="email"
-                  className="input"
+                  className={`${styles.input} ${styles.whitePlaceholder}`}
                   value={formData.email}
                   onChange={handleChange}
-                  required
+                  placeholder="Email"
+                  style={{ fontSize: "16px" }}
                 />
-                <label>Email</label>
-                <span>Email</span>
+                {errors.email && <p className={styles.error}>{errors.email}</p>}
               </div>
-              <div className="inputContainer">
-                <input
-                  type="tel"
-                  name="phone"
-                  className="input"
+
+              <div className={styles.inputContainer}>
+                <PhoneInput
+                  country={"in"}
                   value={formData.phone}
-                  onChange={handleChange}
-                  required
+                  onChange={handlePhoneChange}
+                  inputClass={`${styles.input} ${styles.phoneInput} ${styles.whitePlaceholder}`}
+                  buttonClass={styles.noFlag}
+                  enableSearch
+                  inputProps={{
+                    name: "phone",
+                    style: { fontSize: "16px", color: "#fff" },
+                  }}
+                  placeholder="Phone"
                 />
-                <label>Phone</label>
-                <span>Phone</span>
+                {errors.phone && <p className={styles.error}>{errors.phone}</p>}
               </div>
-              <div className="inputContainer textarea">
+
+              <div className={`${styles.inputContainer} ${styles.textarea}`}>
                 <textarea
                   name="message"
-                  className="input"
+                  className={`${styles.input} ${styles.whitePlaceholder}`}
                   value={formData.message}
                   onChange={handleChange}
-                  required
+                  placeholder="Message"
+                  style={{ fontSize: "16px" }}
                 ></textarea>
-                <label>Message</label>
-                <span>Message</span>
+                {errors.message && <p className={styles.error}>{errors.message}</p>}
               </div>
-              <input type="submit" value="Send" className="contbtn" />
+
+              <input type="submit" value="Send" className={styles.contbtn} />
             </form>
           </div>
         </div>

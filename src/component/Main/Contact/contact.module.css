@@ -1,3 +1,19 @@
+/* Existing styles kept same but wrapped in module. Add only new styles here */
+
+.phoneInput {
+  border: 2px solid #fafafa !important;
+  background: none !important;
+  color: #fff !important;
+  font-size: 0.95rem;
+  padding-left: 48px !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+}
+
+.noFlag .flag-dropdown {
+  display: none !important;
+}
+
 .contactContainer {
   position: relative;
   width: 100%;
@@ -119,7 +135,7 @@ form {
   transform: translateY(0);
 }
 
-.btn {
+.contbtn {
   padding: 0.6rem 1.3rem;
   background-color: #fff;
   border: 2px solid #fafafa;
@@ -131,9 +147,9 @@ form {
   cursor: pointer;
   transition: 0.3s;
   margin: 0;
-}
+} 
 
-.btn:hover {
+.contbtn:hover {
   background-color: transparent;
   color: #fff;
 }
@@ -361,7 +377,43 @@ form {
     padding: 0.45rem 1.2rem;
   }
 
-  .btn {
+  .contbtn {
     padding: 0.45rem 1.2rem;
   }
+}
+.whitePlaceholder::placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.inputContainer {
+  margin: 1.5rem 0;
+}
+
+.input {
+  padding: 0.9rem 1.2rem;
+}
+
+.textarea textarea {
+  padding: 1rem 1.2rem;
+}
+
+.phoneInput {
+  border: 2px solid #fafafa !important;
+  background: none !important;
+  color: #fff !important;
+  font-size: 0.95rem;
+  padding-left: 48px !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+}
+
+.noFlag .flag-dropdown {
+  display: none !important;
+}
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
