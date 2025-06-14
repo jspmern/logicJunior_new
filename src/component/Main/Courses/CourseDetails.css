@@ -1,327 +1,753 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Logic Junior Course Details - Unique CSS Classes with Project Colors */
+
+.lj-course-details {
+  min-height: 100vh;
+  background-color: var(--isabelline);
+  font-family: var(--ff-poppins);
 }
 
-.Courseheader {
-    background-color: #2d2f31;
-    padding: 20px 0;
+/* Header Styles */
+ 
+.lj-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.breadcrumb {
-    font-size: 14px;
-    margin-bottom: 10px;
-    color: #1abc9c;
+.lj-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
 }
 
-.breadcrumb a {
-    color: #1abc9c;
-    text-decoration: none;
+.lj-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray-web);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--fs-7);
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
 }
 
-.breadcrumb a:hover {
-    text-decoration: underline;
+.lj-back-btn:hover {
+  color: var(--kappel);
 }
 
-.hero-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    padding: 40px 0;
-    align-items: start;
+.lj-back-arrow {
+  font-size: var(--fs-5);
 }
 
-.course-info h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.3;
+.lj-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.course-description {
-    font-size: 19px;
-    margin-bottom: 20px;
-    color: #d1d7db;
+.lj-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.course-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-    margin-bottom: 30px;
-    font-size: 14px;
-    color: #d1d7db;
+.lj-star {
+  color: var(--selective-yellow);
+  font-size: var(--fs-5);
 }
 
-.rating {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.lj-rating-text {
+  font-weight: var(--fw-500);
+  font-size: var(--fs-7);
+  color: var(--eerie-black-1);
 }
 
-.stars {
-    color: #f69c08;
-    font-size: 16px;
+.lj-students {
+  color: var(--gray-web);
+  font-size: var(--fs-7);
 }
 
-.rating-number {
-    color: #f69c08;
-    font-weight: bold;
+/* Hero Section */
+.lj-hero {
+  background: var(--gradient);
+  color: var(--white);
+  padding: var(--section-padding) 0;
 }
 
-.student-count {
-    color: #1abc9c;
-    text-decoration: underline;
+.lj-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.instructor {
-    color: #1abc9c;
-    text-decoration: underline;
+.lj-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.course-preview {
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 20px;
+.lj-level-badge {
+  display: inline-block;
+  background: var(--radical-red);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  width: fit-content;
+  animation: lj-fadeInUp 0.6s ease-out;
 }
 
-.preview-video {
-    position: relative;
-    background: linear-gradient(135deg, #667eea 0%, #1abc9c 100%);
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.lj-hero-title {
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-league_spartan);
+  line-height: 1.1;
+  margin: 0;
+  animation: lj-fadeInUp 0.6s ease-out 0.1s both;
 }
 
-.play-button {
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: transform 0.2s;
+.lj-hero-subtitle {
+  font-size: var(--fs-4);
+  color: var(--white_50);
+  margin: 0;
+  animation: lj-fadeInUp 0.6s ease-out 0.2s both;
 }
 
-.play-button:hover {
-    transform: scale(1.1);
+.lj-hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  animation: lj-fadeInUp 0.6s ease-out 0.3s both;
 }
 
-.play-icon {
-    width: 0;
-    height: 0;
-    border-left: 20px solid #1abc9c;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    margin-left: 4px;
+.lj-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-7);
 }
 
-.preview-text {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: #fff;
-    font-weight: 600;
+.lj-meta-icon {
+  font-size: var(--fs-5);
 }
 
-.course-tabs {
-    background-color: #f7f9fa;
-    display: flex;
-    border-bottom: 1px solid #d1d7db;
+.lj-pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: lj-fadeInUp 0.6s ease-out 0.4s both;
 }
 
-.tab {
-    flex: 1;
-    padding: 15px;
-    text-align: center;
-    background-color: #f7f9fa;
-    color: #1c1d1f;
-    cursor: pointer;
-    border: none;
-    font-weight: 600;
+.lj-price-current {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-league_spartan);
 }
 
-.tab.active {
-    background-color: #fff;
-    border-bottom: 2px solid #a435f0;
-    color: #a435f0;
+.lj-price-original {
+  font-size: var(--fs-4);
+  color: var(--white_50);
+  text-decoration: line-through;
 }
 
-.pricing-section {
-    padding: 20px;
-    background-color: #fff;
-    color: #1c1d1f;
+.lj-discount-badge {
+  background: var(--selective-yellow);
+  color: var(--eerie-black-1);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-600);
 }
 
-.price {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 15px;
+.lj-enroll-btn {
+  background: var(--selective-yellow);
+  color: var(--eerie-black-1);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-10);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-poppins);
+  cursor: pointer;
+  transition: var(--transition-2);
+  animation: lj-fadeInUp 0.6s ease-out 0.5s both;
+  box-shadow: var(--shadow-2);
 }
 
-.cta-button {
-    width: 100%;
-    padding: 16px;
-    background-color: #a435f0;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: background-color 0.2s;
+.lj-enroll-btn:hover {
+  background: var(--radical-red);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-3);
 }
 
-.cta-button:hover {
-    background-color: #8710d8;
+/* Hero Image */
+.lj-hero-image {
+  position: relative;
+  animation: lj-fadeInRight 0.8s ease-out;
 }
 
-.guarantee {
-    text-align: center;
-    font-size: 14px;
-    color: #6a6f73;
-    margin-bottom: 15px;
+.lj-image-container {
+  position: relative;
+  z-index: 10;
 }
 
-.course-actions {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #6a6f73;
+.lj-course-image {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-3);
 }
 
-.course-actions a {
-    color: #a435f0;
-    text-decoration: none;
+.lj-play-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--black_30);
+  border-radius: var(--radius-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.what-youll-learn {
-    background-color: #2d2f31;
-    padding: 30px;
-    border-radius: 8px;
-    margin: 40px 0;
+.lj-play-btn {
+  background: var(--white_50);
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-2);
+  backdrop-filter: blur(10px);
 }
 
-.what-youll-learn h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.lj-play-btn:hover {
+  background: var(--white);
+  transform: scale(1.1);
 }
 
-.learning-objectives {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+.lj-play-icon {
+  color: var(--kappel);
+  font-size: 1.5rem;
+  margin-left: 0.25rem;
 }
 
-.objective {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+.lj-floating-shape {
+  position: absolute;
+  border-radius: var(--radius-circle);
+  opacity: 0.2;
+  animation: lj-pulse 2.5s infinite;
 }
 
-.checkmark {
-    color: #73d13d;
-    font-weight: bold;
-    margin-top: 2px;
+.lj-shape-1 {
+  top: -1rem;
+  right: -1rem;
+  width: 6rem;
+  height: 6rem;
+  background: var(--selective-yellow);
 }
 
-.course-includes {
-    margin: 40px 0;
+.lj-shape-2 {
+  bottom: -1rem;
+  left: -1rem;
+  width: 8rem;
+  height: 8rem;
+  background: var(--radical-red);
 }
 
-.course-includes h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+/* Main Content */
+.lj-main-content {
+  padding: var(--section-padding) 0;
 }
 
-.includes-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.lj-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
 }
 
-.include-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    color: #d1d7db;
+.lj-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.include-icon {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
+.lj-section {
+  animation: lj-fadeInUp 0.6s ease-out;
 }
 
-.companies-section {
-    background-color: #2d2f31;
-    padding: 30px;
-    border-radius: 8px;
-    margin: 40px 0;
+.lj-section-title {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-league_spartan);
+  color: var(--eerie-black-1);
+  margin: 0 0 1.5rem 0;
 }
 
-.companies-section h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+.lj-description {
+  font-size: var(--fs-4);
+  color: var(--gray-web);
+  line-height: 1.7;
+  margin: 0;
 }
 
-.companies-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    align-items: center;
-    opacity: 0.7;
+/* What's Included */
+.lj-included-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
 }
 
-.company-logo {
-    height: 40px;
-    filter: grayscale(100%) brightness(2);
-    opacity: 0.8;
+.lj-included-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-2);
+}
+
+.lj-included-item:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-2px);
+}
+
+.lj-check-icon {
+  color: var(--kappel);
+  font-weight: 700;
+  font-size: var(--fs-5);
+  flex-shrink: 0;
+}
+
+.lj-included-text {
+  color: var(--eerie-black-2);
+  font-size: var(--fs-6);
+}
+
+/* Curriculum */
+.lj-curriculum-summary {
+  display: flex;
+  justify-content: space-between;
+  background: var(--platinum);
+  padding: 1.5rem;
+  border-radius: var(--radius-10);
+  margin-bottom: 1.5rem;
+}
+
+.lj-summary-item {
+  color: var(--gray-web);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+}
+
+/* Accordion */
+.lj-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lj-accordion-item {
+  border: 1px solid var(--light-gray);
+  border-radius: var(--radius-10);
+  background: var(--white);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-2);
+}
+
+.lj-accordion-item:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.lj-accordion-header {
+  width: 100%;
+  padding: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  transition: var(--transition-1);
+  border-radius: var(--radius-10);
+}
+
+.lj-accordion-header:hover {
+  background: var(--isabelline);
+}
+
+.lj-accordion-header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lj-module-icon {
+  background: var(--kappel_15);
+  color: var(--kappel);
+  padding: 0.5rem;
+  border-radius: var(--radius-10);
+  font-size: var(--fs-5);
+}
+
+.lj-module-title {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-league_spartan);
+  color: var(--eerie-black-1);
+  margin: 0 0 0.25rem 0;
+}
+
+.lj-module-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: var(--fs-7);
+  color: var(--gray-web);
+}
+
+.lj-accordion-arrow {
+  color: var(--gray-web);
+  font-size: var(--fs-7);
+  transition: var(--transition-1);
+}
+
+.lj-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition-2);
+  opacity: 0;
+}
+
+.lj-accordion-open {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.lj-accordion-body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.lj-module-description {
+  color: var(--gray-web);
+  font-size: var(--fs-6);
+  margin: 0 0 1rem 0;
+}
+
+.lj-lessons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lj-lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--fs-7);
+  color: var(--eerie-black-2);
+}
+
+.lj-lesson-bullet {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--kappel);
+  border-radius: var(--radius-circle);
+  flex-shrink: 0;
+}
+
+/* Right Column - Sidebar */
+.lj-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lj-enrollment-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-2);
+  position: sticky;
+  top: 6rem;
+}
+
+.lj-card-pricing {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.lj-card-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lj-card-price {
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-league_spartan);
+  color: var(--eerie-black-1);
+}
+
+.lj-card-original-price {
+  font-size: var(--fs-4);
+  color: var(--quick-silver);
+  text-decoration: line-through;
+}
+
+.lj-payment-note {
+  font-size: var(--fs-7);
+  color: var(--gray-web);
+  margin: 0;
+}
+
+.lj-card-enroll-btn {
+  width: 100%;
+  background: var(--kappel);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-10);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-poppins);
+  cursor: pointer;
+  transition: var(--transition-2);
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-1);
+}
+
+.lj-card-enroll-btn:hover {
+  background: var(--radical-red);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
+.lj-card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lj-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-7);
+  color: var(--gray-web);
+}
+
+.lj-feature-icon {
+  font-size: var(--fs-6);
+  color: var(--kappel);
+}
+
+/* Instructor Card */
+.lj-instructor-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-2);
+}
+
+.lj-instructor-title {
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  font-family: var(--ff-league_spartan);
+  color: var(--eerie-black-1);
+  margin: 0 0 1rem 0;
+}
+
+.lj-instructor-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.lj-instructor-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-circle);
+  object-fit: cover;
+}
+
+.lj-instructor-name {
+  font-weight: var(--fw-600);
+  color: var(--eerie-black-1);
+  font-size: var(--fs-6);
+  margin: 0 0 0.25rem 0;
+}
+
+.lj-instructor-role {
+  font-size: var(--fs-7);
+  color: var(--gray-web);
+  margin: 0;
+}
+
+.lj-instructor-bio {
+  font-size: var(--fs-7);
+  color: var(--gray-web);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes lj-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lj-fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lj-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lj-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .lj-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .lj-hero-title {
+    font-size: var(--fs-2);
+  }
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .course-preview {
-        position: static;
-        order: -1;
-    }
-
-    .learning-objectives,
-    .includes-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .companies-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .course-info h1 {
-        font-size: 28px;
-    }
+  .lj-container {
+    padding: 0 0.75rem;
+  }
+  
+  .lj-hero {
+    padding: calc(var(--section-padding) * 0.7) 0;
+  }
+  
+  .lj-hero-title {
+    font-size: var(--fs-3);
+  }
+  
+  .lj-hero-subtitle {
+    font-size: var(--fs-5);
+  }
+  
+  .lj-hero-meta {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .lj-pricing {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .lj-included-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .lj-curriculum-summary {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .lj-accordion-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .lj-module-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .companies-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .lj-header-content {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0;
+    gap: 0.5rem;
+  }
+  
+  .lj-hero-title {
+    font-size: var(--fs-3);
+  }
+  
+  .lj-section-title {
+    font-size: var(--fs-3);
+  }
+  
+  .lj-enrollment-card {
+    position: static;
+  }
+}
 
-    .course-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--isabelline);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-gray);
+  border-radius: var(--radius-3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--quick-silver);
 }
