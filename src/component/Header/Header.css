@@ -1,0 +1,123 @@
+/* Base header styles */
+.header {
+  background: #fff;
+  position: relative;
+  padding: 1rem 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo img {
+  display: block;
+  max-height: 50px;
+}
+
+/* Navbar: hidden by default on mobile */
+.navbar {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 1rem;
+}
+
+.navbar.active {
+  display: flex;
+  animation: slideDown 0.3s ease-out;
+}
+
+.navbar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar-item {
+  padding: 0.75rem 1rem;
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Nav Close button */
+.nav-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* Header actions: hamburger & CTA */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-action-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Overlay effect */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 900;
+}
+
+/* Animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Desktop view */
+@media (min-width: 992px) {
+  .navbar {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0;
+    width: auto;
+  }
+
+  .navbar-list {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-close-btn,
+  .header-action-btn,
+  .overlay {
+    display: none;
+  }
+}

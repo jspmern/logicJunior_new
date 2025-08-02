@@ -10,25 +10,25 @@ function Footer() {
         <div className="container grid-list">
           <div className="footer-brand">
             <a href="#" className="logo">
-              <img
+              {/* TODO */}
+              {/* <img
                 src="/assets/images/logo-light.svg"
                 width="162"
                 height="50"
                 alt="EduWeb logo"
-              />
+              /> */}
             </a>
             <p className="footer-brand-text">
-              Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor
-              incidid unt labore dolore.
+              Discover thousands of fun and interactive learning activities to support your child's growth and learning process.
             </p>
             <div className="wrapper">
               <span className="span">Add:</span>
-              <address className="address">70-80 Upper St Norwich NR2</address>
+              <address className="address">Bengaluru</address>
             </div>
             <div className="wrapper">
               <span className="span">Call:</span>
-              <a href="tel:+011234567890" className="footer-link">
-                +01 123 4567 890
+              <a href="tel:+918539008051" className="footer-link">
+                +91 8539008051
               </a>
             </div>
             <div className="wrapper">
@@ -52,7 +52,7 @@ function Footer() {
                 Courses
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#" className="footer-link">
                 Instructor
               </a>
@@ -71,7 +71,7 @@ function Footer() {
               <a href="#" className="footer-link">
                 Purchase Guide
               </a>
-            </li>
+            </li> */}
           </ul>
           <ul className="footer-list">
             <li>
@@ -82,7 +82,7 @@ function Footer() {
                 Contact Us
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#" className="footer-link">
                 Gallery
               </a>
@@ -106,11 +106,11 @@ function Footer() {
               <a href="#" className="footer-link">
                 Coming Soon
               </a>
-            </li>
+            </li> */}
           </ul>
           <div className="footer-list">
             <p className="footer-list-title">Contacts</p>
-            <p className="footer-list-text">
+            {/* <p className="footer-list-text">
               Enter your email address to register to our newsletter
               subscription
             </p>
@@ -129,33 +129,33 @@ function Footer() {
                   aria-hidden="true"
                 ></ion-icon>
               </button>
-            </form>
+            </form> */}
             <ul className="social-list">
               <li>
-                <a href="#" className="social-link">
+                <a href="https://www.facebook.com/people/Logic-Junior/61558860847856/" className="social-link" target="_blank">
                   <ion-icon name="logo-facebook"></ion-icon>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="social-link">
                   <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="#" className="social-link">
+                <a href="https://www.instagram.com/logic__junior/" className="social-link" target="_blank">
                   <ion-icon name="logo-instagram"></ion-icon>
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="social-link">
                   <ion-icon name="logo-twitter"></ion-icon>
                 </a>
-              </li>
-              <li>
-                <a href="#" className="social-link">
+              </li> */}
+              {/* <li>
+                <a href="#" className="social-link" >
                   <ion-icon name="logo-youtube"></ion-icon>
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -163,9 +163,9 @@ function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <p className="copyright">
-            Copyright 2022 All Rights Reserved by{" "}
+            Copyright {new Date().getFullYear()} All Rights Reserved by{" "}
             <a href="#" className="copyright-link">
-              utsavmaithili
+              logic__junior
             </a>
           </p>
         </div>

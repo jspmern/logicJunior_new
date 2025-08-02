@@ -1,95 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Header.css"; // Ensure you have the matching CSS
 
 function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <>
-      <header class="header" data-header>
-        <div class="container">
-          <a href="#" class="logo">
-            <img
-              src="/assets/images/logo.svg"
-              width="162"
-              height="50"
-              alt="EduWeb logo"
-            />
-          </a>
+    <header className={`header ${isMenuOpen ? "nav-open" : ""}`} data-header>
+      <div className="container">
+        <a href="#" className="logo">
+          <img
+            src="/assets/images/logo.svg"
+            width="162"
+            height="50"
+            alt="EduWeb logo"
+          />
+        </a>
 
-          <nav class="navbar" data-navbar>
-            <div class="wrapper">
-              <a href="#" class="logo">
-                <img
-                  src="/assets/images/logo.svg"
-                  width="162"
-                  height="50"
-                  alt="EduWeb logo"
-                />
-              </a>
-
-              <button
-                class="nav-close-btn"
-                aria-label="close menu"
-                data-nav-toggler
-              >
-                <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-              </button>
-            </div>
-
-            <ul class="navbar-list">
-              <li class="navbar-item">
-                <a href="#home" class="navbar-link" data-nav-link>
-                  Home
-                </a>
-              </li>
-
-              <li class="navbar-item">
-                <a href="#about" class="navbar-link" data-nav-link>
-                  About
-                </a>
-              </li>
-
-              <li class="navbar-item">
-                <a href="#courses" class="navbar-link" data-nav-link>
-                  Courses
-                </a>
-              </li>
-
-              <li class="navbar-item">
-                <a href="#blog" class="navbar-link" data-nav-link>
-                  Blog
-                </a>
-              </li>
-
-              <li class="navbar-item">
-                <a href="#" class="navbar-link" data-nav-link>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="header-actions">
-            <a href="#" class="btn has-before">
-              <span class="span">Book a FREE DEMO</span>
-
-              <ion-icon
-                name="arrow-forward-outline"
-                aria-hidden="true"
-              ></ion-icon>
+        <nav className={`navbar ${isMenuOpen ? "active" : ""}`} data-navbar>
+          <div className="wrapper">
+            <a href="#" className="logo">
+              <img
+                src="/assets/images/logo.svg"
+                width="162"
+                height="50"
+                alt="EduWeb logo"
+              />
             </a>
 
             <button
-              class="header-action-btn"
-              aria-label="open menu"
-              data-nav-toggler
+              className="nav-close-btn"
+              aria-label="close menu"
+              onClick={toggleMenu}
             >
-              <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
             </button>
           </div>
 
-          <div class="overlay" data-nav-toggler data-overlay></div>
+          <ul className="navbar-list">
+            <li className="navbar-item">
+              <a href="#home" className="navbar-link" onClick={toggleMenu}>
+                Home
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a href="#about" className="navbar-link" onClick={toggleMenu}>
+                About
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a href="#courses" className="navbar-link" onClick={toggleMenu}>
+                Courses
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a href="#blog" className="navbar-link" onClick={toggleMenu}>
+                Blog
+              </a>
+            </li>
+            <li className="navbar-item">
+              <a href="#contact" className="navbar-link" onClick={toggleMenu}>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div className="header-actions">
+          <a href="#" className="btn has-before">
+            <span className="span">Book a FREE DEMO</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+
+          <button
+            className="header-action-btn"
+            aria-label="open menu"
+            onClick={toggleMenu}
+          >
+            <ion-icon
+              name={isMenuOpen ? "close-outline" : "menu-outline"}
+              aria-hidden="true"
+            ></ion-icon>
+          </button>
         </div>
-      </header>
-    </>
+
+        {isMenuOpen && (
+          <div className="overlay" onClick={toggleMenu} data-overlay></div>
+        )}
+      </div>
+    </header>
   );
 }
 
