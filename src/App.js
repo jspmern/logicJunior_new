@@ -15,6 +15,7 @@ import Hero from "./component/Main/Hero/Hero";
 import State from "./component/Main/State/State";
 import Video from "./component/Main/Video/Video";
 import NotFound from "./component/Main/NotFound/NotFound";
+import TestSeries from "./component/Main/TestSeries/TestSeries";
 
 // ScrollToTop component
 function ScrollToTop() {
@@ -51,7 +52,8 @@ function App() {
           <Route path="/about" element={<><About /><Footer /></>} />
           <Route path="/courses" element={<><Courses /><Footer /></>} />
           <Route path="/courses/:courseId" element={<><CourseDetails /><Footer /></>} />
-          <Route path="/blog" element={<><Blog /><Footer /></>} />
+          {/* <Route path="/blog" element={<><Blog /><Footer /></>} /> */}
+          <Route path="/testseries" element={<><TestSeries /><Footer /></>} />
           <Route path="/contact" element={<><Contact /><Footer /></>} />
           <Route path="*" element={<><NotFound /><Footer /></>} />
         </Routes>
