@@ -16,9 +16,9 @@ function State() {
   });
 
   return (
-    <section className="section stats" aria-label="stats" ref={ref}>
-      <div className="container">
-        <ul className="grid-list">
+    <section className="section stats" aria-label="stats" ref={ref} >
+       
+        <ul className="grid-list" style={{padding:'72px'}}>
           {statsData.map((stat, index) => (
             <li key={index}>
               <div className="stats-card" style={{ "--color": stat.color }}>
@@ -40,7 +40,7 @@ function State() {
             </li>
           ))}
         </ul>
-      </div>
+       
     </section>
   );
 }
