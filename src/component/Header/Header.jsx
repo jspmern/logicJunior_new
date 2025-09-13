@@ -40,27 +40,27 @@ function Header() {
           </div>
           <ul className="navbar-list">
             <li className="navbar-item">
-              <Link to="/" className="navbar-link" onClick={toggleMenu}>
+              <Link to="/" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 Home
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/about" className="navbar-link" onClick={toggleMenu}>
+              <Link to="/about" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 About
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/courses" className="navbar-link" onClick={toggleMenu}>
+              <Link to="/courses" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 Courses
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/blog" className="navbar-link" onClick={toggleMenu}>
+              <Link to="/blog" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 Blog
               </Link>
             </li>
             <li className="navbar-item">
-              <Link to="/contact" className="navbar-link" onClick={toggleMenu}>
+              <Link to="/contact" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 Contact
               </Link>
             </li>
