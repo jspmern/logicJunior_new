@@ -54,11 +54,13 @@ function Header() {
                 Courses
               </Link>
             </li>
+            {/*
             <li className="navbar-item">
               <Link to="/blog" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 Blog
               </Link>
             </li>
+            */}
             <li className="navbar-item">
               <Link to="/contact" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
                 Contact
