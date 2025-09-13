@@ -5,9 +5,9 @@ import { color, courseDetails } from "../../../utils";
 function Category() {
  let count=0
   return (
-    <section className="section category" aria-label="category">
+    <section className="section category" aria-label="category" style={{padding:"50px"}}>
       
-        <div className="sub-container">
+        <div  >
            <p className="section-subtitle">Popular Courses</p>
 
         <h2 className="h2 section-title">
