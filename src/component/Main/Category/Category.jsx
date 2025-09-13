@@ -5,9 +5,10 @@ import { color, courseDetails } from "../../../utils";
 function Category() {
  let count=0
   return (
-    <section className="section category" aria-label="category">
-      <div className="container">
-        <p className="section-subtitle">Popular Courses</p>
+    <section className="section category" aria-label="category" style={{padding:"50px"}}>
+      
+        <div  >
+           <p className="section-subtitle">Popular Courses</p>
 
         <h2 className="h2 section-title">
           Pick A <span className="span">Course</span> To Get Started.
@@ -16,6 +17,8 @@ function Category() {
         <p className="section-text">
           Interactive lessons designed for anytime, anywhere learning.
         </p>
+        </div>
+       
 
         <ul className="grid-list">
           {courseDetails.map((_,i)=>{
@@ -57,7 +60,7 @@ function Category() {
             }
           })}
         </ul>
-      </div>
+       
     </section>
   );
 }

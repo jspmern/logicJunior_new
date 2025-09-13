@@ -22,8 +22,8 @@ function Courses() {
   };
 
   return (
-    <section className="section course" id="courses" aria-label="course">
-      <div className="container">
+    <section className="section course" id="courses" aria-label="course" style={{padding:"50px"}}>
+      
         <p className="section-subtitle">Categories</p>
         <h2 className="h2 section-title">Online Classes For Remote Learning</h2>
 
@@ -109,7 +109,6 @@ function Courses() {
           <span className="span">Browse more courses</span>
           <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
         </a>
-      </div>
     </section>
   );
 }
