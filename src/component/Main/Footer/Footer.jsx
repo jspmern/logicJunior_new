@@ -9,7 +9,7 @@ function Footer() {
     >
       <div className="footer-top section">
         <div className="container grid-list">
-          <div className="footer-brand">
+          <div className="footer-brand" style={{width:"350px"}}>
             <Link to="/" className="logo">
               <img
                 src="/assets/images/logo-light.svg"
@@ -63,12 +63,28 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/blog" className="footer-link">
-                Blog
+              <Link to="/testseries" className="footer-link" style={{ color: "#2ec4b6", textDecoration: "none", fontSize: "1.15rem", marginBottom: "0.7rem", display: "block", position: "relative", fontWeight: "600" }}>
+                Test Series
+                <span style={{
+                  position: "absolute",
+                  left: 0,
+                  bottom: -2,
+                  width: "100%",
+                  height: "3px",
+                  background: "linear-gradient(90deg,#2ec4b6,#377dff)",
+                  borderRadius: "2px",
+                  animation: "footer-underline 1.2s infinite alternate"
+                }}></span>
               </Link>
             </li>
+            <style>{`
+              @keyframes footer-underline {
+                0% { width: 0; opacity: 0.5; }
+                100% { width: 100%; opacity: 1; }
+              }
+            `}</style>
           </ul>
-          <div className="footer-list">
+          <div className="footer-list" style={{position:"relative",top:"-30px"}}>
             <p className="footer-list-title">Contacts</p>
             <ul className="social-list" style={{ display: "flex", gap: "1rem", justifyContent: "center" }}>
               <li>
@@ -81,6 +97,16 @@ function Footer() {
                   <ion-icon name="logo-instagram"></ion-icon>
                 </a>
               </li>
+                <li>
+                  <a href="https://www.linkedin.com/company/logic-junior/" className="social-link" target="_blank" rel="noopener noreferrer" >
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://wa.me/918539008051" className="social-link" target="_blank" rel="noopener noreferrer"  >
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                  </a>
+                </li>
             </ul>
           </div>
         </div>

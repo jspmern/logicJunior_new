@@ -8,8 +8,60 @@ function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navigate = useNavigate();
+  const [showMarquee, setShowMarquee] = React.useState(true);
   return (
-    <header className={`header ${isMenuOpen ? "nav-open" : ""}`} data-header>
+    <header className={`header ${isMenuOpen ? "nav-open" : ""}`} data-header style={{padding: "0.5rem 0 0.5rem 0"}}>
+      {showMarquee && (
+        <div style={{ width: "100%", background: "linear-gradient(90deg,#2ec4b6 0%,#377dff 100%)", color: "#fff", padding: "0.7rem 0", fontWeight: 600, fontSize: "1.15rem", letterSpacing: "1px", overflow: "hidden", position: "relative", zIndex: 101 }}>
+          <div style={{ display: "flex", alignItems: "center", width: "100%", whiteSpace: "nowrap", animation: "marquee 32s linear infinite" }}>
+            <span style={{ marginRight: "2.5rem", fontSize: "1.2rem", fontWeight: 700, color: "#ffd580" }}>Industry Ready</span>
+            <span style={{ marginRight: "2.5rem" }}>🚀 Logic Junior Test Series Now Live!</span>
+            <span style={{ marginRight: "2.5rem" }}>💡 Upskill with Real-World Practice Sets</span>
+            <span style={{ marginRight: "2.5rem" }}>🎓 Trusted by Top Educators</span>
+            <span style={{ marginRight: "2.5rem" }}>📈 Track Your Progress Instantly</span>
+          </div>
+          <button
+            style={{
+              position: "absolute",
+              right: 24,
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "none",
+              color: "#fff",
+              border: "none",
+              borderRadius: "50%",
+              width: 42,
+              height: 42,
+              fontWeight: 700,
+              fontSize: "2rem",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "color 0.2s"
+            }}
+            aria-label="Dismiss industry updates"
+            title="Dismiss industry updates"
+            onClick={() => {
+              setShowMarquee(false);
+            }}
+            onMouseOver={e => {
+              e.currentTarget.style.color = "#111";
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.color = "#fff";
+            }}
+          >
+            <span style={{fontWeight:700, fontSize:"2rem", lineHeight:"1"}} aria-hidden="true">×</span>
+          </button>
+          <style>{`
+            @keyframes marquee {
+              0% { transform: translateX(100%); }
+              100% { transform: translateX(-100%); }
+            }
+          `}</style>
+        </div>
+      )}
       <div className="container">
         <Link to="/" className="logo">
           <img

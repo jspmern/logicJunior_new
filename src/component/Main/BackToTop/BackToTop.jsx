@@ -12,7 +12,7 @@ const BackToTop = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/919999999999", "_blank"); // Replace with your WhatsApp number
+    window.open("https://wa.me/918539008051", "_blank"); // Replace with your WhatsApp number
   };
 
   const handleScrollTop = () => {
