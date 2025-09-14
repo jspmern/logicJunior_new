@@ -49,13 +49,13 @@ function App() {
               </article>
             }
           />
-          <Route path="/about" element={<><About /><Footer /></>} />
-          <Route path="/courses" element={<><Courses /><Footer /></>} />
-          <Route path="/courses/:courseId" element={<><CourseDetails /><Footer /></>} />
-          {/* <Route path="/blog" element={<><Blog /><Footer /></>} /> */}
-          <Route path="/testseries" element={<><TestSeries /><Footer /></>} />
-          <Route path="/contact" element={<><Contact /><Footer /></>} />
-          <Route path="*" element={<><NotFound /><Footer /></>} />
+          <Route path="/about" element={<><About /><Footer /><BackToTop /></>} />
+          <Route path="/courses" element={<><Courses /><Footer /><BackToTop /></>} />
+          <Route path="/courses/:courseId" element={<><CourseDetails /><Footer /><BackToTop /></>} />
+          {/* <Route path="/blog" element={<><Blog /><Footer /><BackToTop /></>} /> */}
+          <Route path="/testseries" element={<><TestSeries /><Footer /><BackToTop /></>} />
+          <Route path="/contact" element={<><Contact /><Footer /><BackToTop /></>} />
+          <Route path="*" element={<><NotFound /><Footer /><BackToTop /></>} />
         </Routes>
       </main>
     </Router>
