@@ -11,12 +11,13 @@ function Footer() {
         <div className="container grid-list">
           <div className="footer-brand" style={{width:"350px"}}>
             <Link to="/" className="logo">
-              <img
-                src="/assets/images/logo-light.svg"
+            {/* //TO-DO  */}
+              {/* <img
+                src="/assets/images/logo.svg"
                 width="162"
                 height="50"
                 alt="Logic Junior logo"
-              />
+              /> */}
             </Link>
             <p className="footer-brand-text">
               Discover thousands of fun and interactive learning activities to support your child's growth and learning process.
