@@ -1,0 +1,107 @@
+.iqgames-footer {
+  background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+  border-radius: 18px;
+  padding: 32px 24px;
+  margin: 32px auto 0 auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  color: #fff;
+  animation: fadeInFooter 1.2s;
+}
+
+@keyframes fadeInFooter {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.iqgames-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #ee0979;
+}
+
+.iqgames-list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.iqgame-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 24px 18px;
+  min-width: 220px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+.iqgame-card.active {
+  border-color: #fff;
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 8px 32px #ee0979;
+}
+
+.iqgame-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.iqgame-desc {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  text-align: center;
+  color: #ffd6e0;
+}
+.iqgame-score, .iqgame-result {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.iqgame-score span, .iqgame-result span {
+  font-weight: bold;
+  color: #ff6a00;
+  background: #fff;
+  border-radius: 6px;
+  padding: 2px 8px;
+}
+
+/* Animations for each game */
+.memory-animation {
+  animation: memoryPulse 2s infinite alternate;
+}
+@keyframes memoryPulse {
+  from { box-shadow: 0 0 0 #ff6a00; }
+  to { box-shadow: 0 0 24px #ff6a00; }
+}
+
+.math-animation {
+  animation: mathBounce 1.5s infinite alternate;
+}
+@keyframes mathBounce {
+  from { transform: scale(1); }
+  to { transform: scale(1.07) rotate(2deg); }
+}
+
+.logic-animation {
+  animation: logicGlow 2.2s infinite alternate;
+}
+@keyframes logicGlow {
+  from { box-shadow: 0 0 0 #ee0979; }
+  to { box-shadow: 0 0 24px #ee0979; }
+}
+
+.iqgames-note {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: #ffe3f1;
+  opacity: 0.8;
+}

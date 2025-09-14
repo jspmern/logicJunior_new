@@ -417,3 +417,90 @@ form {
   margin-top: 5px;
   margin-left: 5px;
 }
+.react-tel-input .country-list .country {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .react-tel-input .country-list .country .country-name {
+    display: inline-block !important;
+    font-size: 14px;
+    color: #000;
+  }
+  /* Add this at the end of your CSS Module file */
+:global {
+  .react-tel-input .country-list .country {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .react-tel-input .country-list .country .country-name {
+    display: inline-block !important;
+    font-size: 14px;
+    color: #000;
+  }
+
+  /* Optional: Make the search input look better */
+  .react-tel-input .search-box {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+
+  /* Optional: style the country list container */
+  .react-tel-input .country-list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+/* contact.module.css */
+
+/* --- All your existing styles remain unchanged --- */
+
+.phoneInput {
+  border: 2px solid #fafafa !important;
+  background: none !important;
+  color: #fff !important;
+  font-size: 0.95rem;
+  padding-left: 48px !important;
+  border-radius: 5px !important;
+  width: 100% !important;
+}
+
+.noFlag .flag-dropdown {
+  display: none !important;
+}
+
+/* All your contact, form, and layout styles remain unchanged... */
+
+/* ---- GLOBAL OVERRIDES FOR react-phone-input-2 ---- */
+:global {
+  .react-tel-input .country-list .country {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .react-tel-input .country-list .country .country-name {
+    display: inline-block !important;
+    font-size: 14px;
+    color: #000;
+  }
+
+  .react-tel-input .search-box {
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+  }
+
+  .react-tel-input .country-list {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
