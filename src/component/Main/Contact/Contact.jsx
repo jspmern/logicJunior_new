@@ -72,7 +72,7 @@ const Contact = () => {
     if (Object.keys(validationErrors).length > 0) return;
 
     try {
-      await axios.post("http://localhost:5000/api/contact", formData);
+      await axios.post("https://logic-junior-email.onrender.com/api/contact", formData);
       toast.success("Message sent successfully! 🎉", { autoClose: 3000 });
       setFormData({ name: "", email: "", phone: "", message: "" });
       setErrors({});
