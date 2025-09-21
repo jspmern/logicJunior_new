@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";  // import navigate hook
 import { courseDetails } from "../../../utils";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -50,21 +51,31 @@ function Courses() {
           }}
           style={{ padding: "0 40px" }}
         >
-          {courseDetails.map((course) => (
+          {courseDetails.map((course, idx) => (
             <SwiperSlide key={course.id}>
-              <div
+              <motion.div
                 className="course-card"
                 onClick={() => openCourseDetails(course.id)}
-                style={{ cursor: "pointer" }} // show pointer on hover to indicate clickability
+                style={{ cursor: "pointer" }}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") openCourseDetails(course.id);
                 }}
+                initial={{ opacity: 0, y: 60, scale: 0.92 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ scale: 1.04, boxShadow: "0 8px 32px rgba(44, 62, 80, 0.18)" }}
+                whileTap={{ scale: 0.97, rotate: -2, boxShadow: "0 2px 8px rgba(44, 62, 80, 0.10)" }}
+                transition={{ duration: 0.7, delay: 0.1 + idx * 0.1, type: "spring", stiffness: 120 }}
+                viewport={{ once: true, amount: 0.2 }}
               >
-                <figure
+                <motion.figure
                   className="card-banner img-holder"
                   style={{ "--width": 370, "--height": 220 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 + idx * 0.1 }}
+                  viewport={{ once: true }}
                 >
                   <img
                     src="/assets/images/course-1.jpg"
@@ -74,12 +85,18 @@ function Courses() {
                     alt={course.title}
                     className="img-cover"
                   />
-                </figure>
+                </motion.figure>
                 <div className="abs-badge">
                   <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
                   <span className="span">{course.duration || "4 Hours"}</span>
                 </div>
-                <div className="card-content">
+                <motion.div
+                  className="card-content"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.25 + idx * 0.1 }}
+                  viewport={{ once: true }}
+                >
                   <span className="badge">{course.badge || "Beginner"}</span>
                   <h3 className="h3">
                     <a href="#" className="card-title" onClick={(e) => e.preventDefault()}>
@@ -99,8 +116,8 @@ function Courses() {
                       <span className="span">Group Classes</span>
                     </li>
                   </ul>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

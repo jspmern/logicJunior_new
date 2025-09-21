@@ -1,10 +1,13 @@
 /* Base header styles */
 .header {
   background: #fff;
-  position: relative;
+  position: sticky;
+  top: 0;
   padding: 1rem 0;
   z-index: 2000;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+  /* Optional: subtle shadow for separation */
 }
 
 .container {

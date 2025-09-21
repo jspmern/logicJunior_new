@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
@@ -63,16 +64,24 @@ function Header() {
         </div>
       )}
       <div className="container">
-        <Link to="/" className="logo">
-          <img
-            src="/assets/images/logo.svg"
-            width="162"
-            height="50"
-            alt="EduWeb logo"
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          <Link to="/" className="logo">
+            <motion.img
+              src="/assets/images/logo.svg"
+              width="162"
+              height="50"
+              alt="EduWeb logo"
+              whileHover={{ scale: 1.08, rotate: -2 }}
+              transition={{ type: "spring", stiffness: 200 }}
+            />
+          </Link>
+        </motion.div>
 
-        <nav className={`navbar ${isMenuOpen ? "active" : ""}`} data-navbar>
+  <nav className={`navbar ${isMenuOpen ? "active" : ""}`} data-navbar>
           <div className="wrapper">
             <Link to="/" className="logo">
               <img
@@ -91,53 +100,57 @@ function Header() {
             </button>
           </div>
           <ul className="navbar-list">
-            <li className="navbar-item">
-              <Link to="/" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
-                Home
-              </Link>
-            </li>
-            <li className="navbar-item">
-              <Link to="/about" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
-                About
-              </Link>
-            </li>
-            <li className="navbar-item">
-              <Link to="/courses" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
-                Courses
-              </Link>
-            </li>
-            {/*
-            <li className="navbar-item">
-              <Link to="/blog" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
-                Blog
-              </Link>
-            </li>
-            */}
-            <li className="navbar-item">
-              <Link to="/contact" className="navbar-link" style={{fontSize: '1.35rem', padding: '0.7rem 1.2rem'}} onClick={toggleMenu}>
-                Contact
-              </Link>
-            </li>
+            {[
+              { to: "/", label: "Home" },
+              { to: "/about", label: "About" },
+              { to: "/courses", label: "Courses" },
+              // { to: "/blog", label: "Blog" },
+              { to: "/contact", label: "Contact" },
+            ].map((item, idx) => (
+              <motion.li
+                className="navbar-item"
+                key={item.to}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + idx * 0.08 }}
+                whileHover={{ scale: 1.08, x: 8, color: "#2ec4b6" }}
+              >
+                <Link
+                  to={item.to}
+                  className="navbar-link"
+                  style={{ fontSize: '1.35rem', padding: '0.7rem 1.2rem' }}
+                  onClick={toggleMenu}
+                >
+                  {item.label}
+                </Link>
+              </motion.li>
+            ))}
           </ul>
         </nav>
         <div className="header-actions">
-          <button
+          <motion.button
             className="btn has-before"
             onClick={() => navigate("/contact")}
+            whileHover={{ scale: 1.08, backgroundColor: "#2ec4b6", color: "#fff" }}
+            whileTap={{ scale: 0.96, rotate: -2 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <span className="span">Book a FREE DEMO</span>
             <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             className="header-action-btn"
             aria-label="open menu"
             onClick={toggleMenu}
+            whileHover={{ scale: 1.15, backgroundColor: "#f0f0f0" }}
+            whileTap={{ scale: 0.93, rotate: -10 }}
+            transition={{ type: "spring", stiffness: 300 }}
           >
             <ion-icon
               name={isMenuOpen ? "close-outline" : "menu-outline"}
               aria-hidden="true"
             ></ion-icon>
-          </button>
+          </motion.button>
         </div>
         {isMenuOpen && (
           <div className="overlay" onClick={toggleMenu} data-overlay></div>

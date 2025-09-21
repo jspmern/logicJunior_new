@@ -1,5 +1,6 @@
 
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./component/Header/Header";
@@ -26,13 +27,18 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
+function AnimatedRoutes() {
+  const location = useLocation();
   return (
-    <Router>
-      <ScrollToTop />
-      <Header />
-      <main>
-        <Routes>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -40 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <Routes location={location}>
           <Route
             path="/"
             element={
@@ -57,8 +63,74 @@ function App() {
           <Route path="/contact" element={<><Contact /><Footer /><BackToTop /></>} />
           <Route path="*" element={<><NotFound /><Footer /><BackToTop /></>} />
         </Routes>
-      </main>
-    </Router>
+      </motion.div>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  const [loading, setLoading] = React.useState(true);
+  React.useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1800);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      <AnimatePresence>
+        {loading && (
+          <motion.div
+            key="loader"
+            initial={{ y: 0 }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              background: "linear-gradient(120deg, #2ec4b6 0%, #b388ff 100%)",
+              zIndex: 9999,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column"
+            }}
+          >
+            <motion.div
+              initial={{ width: 0 }}
+              animate={{ width: "220px" }}
+              transition={{ duration: 1.1, ease: "easeInOut" }}
+              style={{
+                height: "6px",
+                background: "#fff",
+                borderRadius: "3px",
+                marginBottom: "32px"
+              }}
+            />
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              style={{ color: "#fff", fontWeight: 700, fontSize: "2.2rem", letterSpacing: 1 }}
+            >
+              Welcome to Logic Junior
+            </motion.h1>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {!loading && (
+        <Router>
+          <ScrollToTop />
+          <Header />
+          <main>
+            <AnimatedRoutes />
+          </main>
+        </Router>
+      )}
+    </>
   );
 }
 

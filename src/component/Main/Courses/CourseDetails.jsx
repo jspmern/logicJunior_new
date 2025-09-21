@@ -1,5 +1,6 @@
 
- import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
  import "./CourseDetails.css"
 import { useParams } from 'react-router-dom';
 import { courseDetails } from '../../../utils';
@@ -29,7 +30,12 @@ const CourseDetails = () => {
   if (!findCourse) return <div>Course not found</div>;
   const courseData = findCourse.courseData || {};
   return (
-    <div className="lj-course-details">
+    <motion.div
+      className="lj-course-details"
+      initial={{ opacity: 0, y: 60 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Hero Section */}
       {/* <div className="lj-hero">
         <div className="lj-container">
@@ -59,9 +65,15 @@ const CourseDetails = () => {
                 <div className="lj-price-original">{courseData.originalPrice || '$149'}</div>
                 <div className="lj-discount-badge">33% OFF</div>
               </div>
-              <button onClick={handleEnroll} className="lj-enroll-btn">
+              <motion.button
+                onClick={handleEnroll}
+                className="lj-enroll-btn"
+                whileHover={{ scale: 1.07, backgroundColor: "#2ec4b6", color: "#fff", boxShadow: "0 4px 24px rgba(46,196,182,0.18)" }}
+                whileTap={{ scale: 0.96, rotate: -2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 Enroll Now
-              </button>
+              </motion.button>
             </div>
             <div className="lj-hero-image">
               <div className="lj-image-container">
@@ -76,11 +88,21 @@ const CourseDetails = () => {
         </div>
       </div> */}
       {/* Main Content */}
-      <div className="lj-main-content">
+      <motion.div
+        className="lj-main-content"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.2 }}
+      >
         <div className="lj-container">
           <div className="lj-content-grid">
             {/* Left Column */}
-            <div className="lj-left-column">
+            <motion.div
+              className="lj-left-column"
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
               {/* Course Description */}
               <section className="lj-section">
                 <h2 className="lj-section-title">About This Course</h2>
@@ -151,9 +173,14 @@ const CourseDetails = () => {
                   ))}
                 </div>
               </section>
-            </div>
+            </motion.div>
             {/* Right Column - Sidebar */}
-            <div className="lj-right-column">
+            <motion.div
+              className="lj-right-column"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
               {/* Enrollment Card */}
               <div className="lj-enrollment-card">
                 <div className="lj-card-pricing">
@@ -203,11 +230,11 @@ const CourseDetails = () => {
                   With over 8 years of experience teaching programming to children, Sarah has helped thousands of kids discover their passion for coding.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
