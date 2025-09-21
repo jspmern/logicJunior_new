@@ -18,7 +18,7 @@ const BackToTop = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/919999999999", "_blank");
+    window.open("https://wa.me/918539008051", "_blank");
     setOpen(false);
   };
 
