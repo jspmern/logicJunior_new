@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Box, Fab, Zoom, Tooltip } from "@mui/material";
+import { Box, Fab, Tooltip } from "@mui/material";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import AddIcon from "@mui/icons-material/Add";
+import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 
 const BackToTop = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -19,6 +22,11 @@ const BackToTop = () => {
 
   const handleWhatsApp = () => {
     window.open("https://wa.me/918539008051", "_blank");
+    setOpen(false);
+  };
+
+  const handleHome = () => {
+    navigate("/");
     setOpen(false);
   };
 
@@ -47,10 +55,11 @@ const BackToTop = () => {
             color: "#fff",
             fontSize: "2rem",
             fontWeight: "bold",
-            '&:hover': {
+            "&:hover": {
               backgroundColor: "#169d87",
             },
           }}
+          aria-label={open ? "close actions" : "open actions"}
         >
           <AddIcon fontSize="inherit" />
         </Fab>
@@ -66,6 +75,9 @@ const BackToTop = () => {
             transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
             style={{ display: "flex", flexDirection: "column", marginBottom: 8 }}
           >
+            {/* Home (first option) */}
+           
+
             <Tooltip title="Scroll to Top" placement="left">
               <motion.div whileHover={{ scale: 1.13, rotate: 8 }} whileTap={{ scale: 0.95, rotate: -8 }}>
                 <Fab
@@ -75,15 +87,36 @@ const BackToTop = () => {
                     backgroundColor: "#fff",
                     color: "#e34e65",
                     mb: 1,
-                    '&:hover': {
+                    "&:hover": {
                       backgroundColor: "#f7eaea",
                     },
                   }}
+                  aria-label="scroll to top"
                 >
                   <KeyboardArrowUpIcon fontSize="large" />
                 </Fab>
               </motion.div>
             </Tooltip>
+             <Tooltip title="Home" placement="left">
+              <motion.div whileHover={{ scale: 1.13, rotate: 8 }} whileTap={{ scale: 0.95, rotate: -8 }}>
+                <Fab
+                  onClick={handleHome}
+                  size="medium"
+                  sx={{
+                    backgroundColor: "#fff",
+                    color: "#e34e65",
+                    mb: 1,
+                    "&:hover": {
+                      backgroundColor: "#f7eaea",
+                    },
+                  }}
+                  aria-label="go to home"
+                >
+                  <HomeIcon fontSize="large" />
+                </Fab>
+              </motion.div>
+            </Tooltip>
+
             <Tooltip title="WhatsApp" placement="left">
               <motion.div whileHover={{ scale: 1.13, rotate: -8 }} whileTap={{ scale: 0.95, rotate: 8 }}>
                 <Fab
@@ -92,10 +125,11 @@ const BackToTop = () => {
                   sx={{
                     backgroundColor: "#25d366",
                     color: "#fff",
-                    '&:hover': {
+                    "&:hover": {
                       backgroundColor: "#1ebc59",
                     },
                   }}
+                  aria-label="open whatsapp"
                 >
                   <WhatsAppIcon fontSize="large" />
                 </Fab>
@@ -104,7 +138,7 @@ const BackToTop = () => {
           </motion.div>
         )}
       </AnimatePresence>
-  </Box>
+    </Box>
   );
 };
 
