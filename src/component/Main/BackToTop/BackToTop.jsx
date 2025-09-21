@@ -5,11 +5,9 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import AddIcon from "@mui/icons-material/Add";
 import HomeIcon from "@mui/icons-material/Home";
-import { useNavigate } from "react-router-dom";
 
 const BackToTop = () => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen((prev) => !prev);
@@ -26,7 +24,7 @@ const BackToTop = () => {
   };
 
   const handleHome = () => {
-    navigate("/");
+    window.location.href = "/"; // Hard refresh to home page
     setOpen(false);
   };
 
@@ -78,6 +76,7 @@ const BackToTop = () => {
             {/* Home (first option) */}
            
 
+            {/* Scroll to Top */}
             <Tooltip title="Scroll to Top" placement="left">
               <motion.div whileHover={{ scale: 1.13, rotate: 8 }} whileTap={{ scale: 0.95, rotate: -8 }}>
                 <Fab
@@ -117,6 +116,7 @@ const BackToTop = () => {
               </motion.div>
             </Tooltip>
 
+            {/* WhatsApp */}
             <Tooltip title="WhatsApp" placement="left">
               <motion.div whileHover={{ scale: 1.13, rotate: -8 }} whileTap={{ scale: 0.95, rotate: 8 }}>
                 <Fab

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import styles from "./contact.module.css";
@@ -10,7 +10,24 @@ import locationIcon from "./assest/location.png";
 import emailIcon from "./assest/email.png";
 import phoneIcon from "./assest/phone.png";
 import shapeImg from "./assest/shape.png";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+} from "react-icons/fa";
+
+/**
+ * Contact component
+ * - Social links and contact details updated to match footer:
+ *   facebook:  https://www.facebook.com/people/Logic-Junior/61558860847856/
+ *   instagram: https://www.instagram.com/logic__junior/
+ *   linkedin:  https://www.linkedin.com/company/logic-junior/
+ *   whatsapp:  https://wa.me/918539008051
+ *
+ * Keep axios POST endpoint as you had it (https://logic-junior-email.onrender.com/api/contact)
+ */
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -72,7 +89,10 @@ const Contact = () => {
     if (Object.keys(validationErrors).length > 0) return;
 
     try {
-      await axios.post("https://logic-junior-email.onrender.com/api/contact", formData);
+      await axios.post(
+        "https://logic-junior-email.onrender.com/api/contact",
+        formData
+      );
       toast.success("Message sent successfully! 🎉", { autoClose: 3000 });
       setFormData({ name: "", email: "", phone: "", message: "" });
       setErrors({});
@@ -80,6 +100,15 @@ const Contact = () => {
       console.error(err);
       toast.error("Failed to send message. ❌", { autoClose: 3000 });
     }
+  };
+
+  // Footer / social links (kept DRY here)
+  const SOCIAL = {
+    facebook:
+      "https://www.facebook.com/people/Logic-Junior/61558860847856/",
+    instagram: "https://www.instagram.com/logic__junior/",
+    linkedin: "https://www.linkedin.com/company/logic-junior/",
+    whatsapp: "https://wa.me/918539008051",
   };
 
   return (
@@ -92,31 +121,79 @@ const Contact = () => {
           <div className={styles.contactInfo}>
             <h3 className={styles.title}>Let's get in touch</h3>
             <p className={styles.text}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe dolorum adipisci recusandae praesentium dicta!
+              Discover thousands of fun and interactive learning activities to
+              support your child's growth and learning process.
             </p>
 
             <div className={styles.info}>
               <div className={styles.information}>
-                <img src={locationIcon} className={styles.icon} alt="" />
-                <p>92 Cherry Drive Uniondale, NY 11553</p>
+                <img src={locationIcon} className={styles.icon} alt="location" />
+                <p>Bengaluru</p>
               </div>
               <div className={styles.information}>
-                <img src={emailIcon} className={styles.icon} alt="" />
-                <p>lorem@ipsum.com</p>
+                <img src={emailIcon} className={styles.icon} alt="email" />
+                <p>
+                  <a
+                    href="mailto:info@eduweb.com"
+                    className={styles.inlineLink}
+                    aria-label="send email to info@eduweb.com"
+                  >
+                    info@eduweb.com
+                  </a>
+                </p>
               </div>
               <div className={styles.information}>
-                <img src={phoneIcon} className={styles.icon} alt="" />
-                <p>123-456-789</p>
+                <img src={phoneIcon} className={styles.icon} alt="phone" />
+                <p>
+                  <a
+                    href="tel:+918539008051"
+                    className={styles.inlineLink}
+                    aria-label="call +91 8539008051"
+                  >
+                    +91 8539008051
+                  </a>
+                </p>
               </div>
             </div>
 
             <div className={styles.socialMedia}>
               <p>Connect with us :</p>
               <div className={styles.socialIcons}>
-                <a href="#"><FaFacebookF /></a>
-                <a href="#"><FaTwitter /></a>
-                <a href="#"><FaInstagram /></a>
-                <a href="#"><FaLinkedinIn /></a>
+                <a
+                  href={SOCIAL.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Logic Junior on Facebook"
+                >
+                  <FaFacebookF />
+                </a>
+                {/* kept Twitter icon for visual parity, but link currently omitted.
+                    If you want to include a twitter link add it to SOCIAL and update here */}
+                {/* <a href="#"><FaTwitter /></a> */}
+                <a
+                  href={SOCIAL.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Logic Junior on Instagram"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href={SOCIAL.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Logic Junior on LinkedIn"
+                >
+                  <FaLinkedinIn />
+                </a>
+                <a
+                  href={SOCIAL.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Message Logic Junior on WhatsApp"
+                >
+                  <FaWhatsapp />
+                </a>
               </div>
             </div>
           </div>
@@ -137,6 +214,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Name"
                   style={{ fontSize: "16px" }}
+                  aria-label="Name"
                 />
                 {errors.name && <p className={styles.error}>{errors.name}</p>}
               </div>
@@ -150,6 +228,7 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Email"
                   style={{ fontSize: "16px" }}
+                  aria-label="Email"
                 />
                 {errors.email && <p className={styles.error}>{errors.email}</p>}
               </div>
@@ -165,6 +244,7 @@ const Contact = () => {
                   inputProps={{
                     name: "phone",
                     style: { fontSize: "16px", color: "#fff" },
+                    "aria-label": "Phone",
                   }}
                   placeholder="Phone"
                 />
@@ -179,8 +259,11 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="Message"
                   style={{ fontSize: "16px" }}
+                  aria-label="Message"
                 ></textarea>
-                {errors.message && <p className={styles.error}>{errors.message}</p>}
+                {errors.message && (
+                  <p className={styles.error}>{errors.message}</p>
+                )}
               </div>
 
               <input type="submit" value="Send" className={styles.contbtn} />
