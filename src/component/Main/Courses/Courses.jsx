@@ -78,7 +78,7 @@ function Courses() {
                   viewport={{ once: true }}
                 >
                   <img
-                    src="/assets/images/course-1.jpg"
+                    src={course.image}
                     width="370"
                     height="220"
                     loading="lazy"

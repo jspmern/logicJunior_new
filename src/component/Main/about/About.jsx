@@ -12,7 +12,7 @@ function About() {
             style={{ "--width": 520, "--height": 370 }}
           >
             <img
-              src="/assets/images/about-banner.jpg"
+              src="/assets/images/about_me.png"
               width="520"
               height="370"
               loading="lazy"
@@ -81,7 +81,7 @@ function About() {
               <span className="span">Global Online Learning</span>
             </li>
             <li style={{marginLeft:"35px"}}>
-              Over 300 students trained from the UK, USA, Australia, China, and more — both online and offline.
+              Over 5000+ students trained from the UK, USA, Australia, China, and more — both online and offline.
             </li>
            <li className="about-item" style={{marginBottom:0}}>
               <ion-icon

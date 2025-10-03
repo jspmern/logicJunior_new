@@ -32,7 +32,8 @@ function Hero() {
             viewport={{ once: true }}
           >
             Discover thousands of fun and interactive learning activities to
-            support your child&#39;s growth and learning process.
+            support your child&#39;s growth and learning process. Activating left and right
+            brain power for smarter learning
           </motion.p>
 
           <motion.a
@@ -60,7 +61,7 @@ function Hero() {
             viewport={{ once: true }}
           >
             <img
-              src="/assets/images/hero-banner-1.jpg"
+              src="/assets/images/hero-banner-1.png"
               width="270"
               height="300"
               alt="hero banner"
@@ -77,7 +78,7 @@ function Hero() {
             viewport={{ once: true }}
           >
             <img
-              src="/assets/images/hero-banner-2.jpg"
+              src="/assets/images/hero-banner-2.png"
               width="240"
               height="370"
               alt="hero banner"
