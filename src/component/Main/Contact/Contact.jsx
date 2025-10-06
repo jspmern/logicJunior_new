@@ -62,7 +62,6 @@ const Contact = () => {
       [name]: value,
     }));
 
-    // Live remove error
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: "",
@@ -75,7 +74,6 @@ const Contact = () => {
       phone: value,
     }));
 
-    // Remove phone error live
     setErrors((prevErrors) => ({
       ...prevErrors,
       phone: "",
@@ -235,18 +233,23 @@ const Contact = () => {
 
               <div className={styles.inputContainer}>
                 <PhoneInput
-                  country={"in"}
+                  country="in"
                   value={formData.phone}
                   onChange={handlePhoneChange}
                   inputClass={`${styles.input} ${styles.phoneInput} ${styles.whitePlaceholder}`}
-                  buttonClass={styles.noFlag}
-                  enableSearch
                   inputProps={{
                     name: "phone",
                     style: { fontSize: "16px", color: "#fff" },
                     "aria-label": "Phone",
                   }}
                   placeholder="Phone"
+                  enableSearch={true}
+                  localization={{
+                    us: "United States",
+                    in: "India",
+                    fr: "France",
+                    de: "Germany",
+                  }}
                 />
                 {errors.phone && <p className={styles.error}>{errors.phone}</p>}
               </div>
