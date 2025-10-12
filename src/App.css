@@ -209,6 +209,25 @@ body {
   background-position: center;
 }
 
+/* Variant: align hero background image from the top so content appears higher on the image */
+.hero.hero-bg-top.has-bg-image {
+  background-position: center top;
+  /* reduce top padding so content moves up visually; keep it non-invasive */
+  padding-block-start: calc(var(--section-padding) * 0.5);
+}
+
+@media (max-width: 992px) {
+  .hero.hero-bg-top.has-bg-image {
+    padding-block-start: calc(var(--section-padding) * 0.4);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero.hero-bg-top.has-bg-image {
+    padding-block-start: calc(var(--section-padding) * 0.35);
+  }
+}
+
 .h1,
 .h2,
 .h3 {
@@ -541,6 +560,43 @@ body {
   border-radius: var(--radius-5);
 }
 
+/* Extra non-invasive responsive rules for category layout */
+.category .grid-list {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Ensure cards are flexible boxes so we can pin the badge at the bottom */
+.category .card-with-badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push badge to bottom */
+  align-items: center;
+  height: 100%; /* let grid row height control card height */
+  padding: 40px 20px; /* slightly smaller padding on responsive mode */
+}
+
+/* Make the badge sit at the bottom and not wrap */
+.category .card-with-badge .card-badge {
+  margin-top: 12px;
+  align-self: center;
+}
+
+/* Breakpoints */
+@media (max-width: 992px) {
+  .category .grid-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .category .grid-list {
+    grid-template-columns: 1fr;
+  }
+  .category .card-with-badge {
+    padding: 30px 18px;
+  }
+}
+
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
@@ -675,6 +731,7 @@ body {
 .course-card .card-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  line-clamp: 2;
   -webkit-line-clamp: 2;
   overflow: hidden;
   margin-block: 15px 8px;
