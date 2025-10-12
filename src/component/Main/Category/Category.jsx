@@ -25,10 +25,10 @@ function Category() {
             if(_.isTopCourse)
             {
               count=count+1
-              return  <>
-            <li>
+              return  (
+            <li key={_.id || i}>
             <div
-              className="category-card"
+              className="category-card card-with-badge"
               style={{ "--color": color[count-1]}}
             >
               <div className="card-icon">
@@ -52,8 +52,7 @@ function Category() {
               <span className="card-badge">Know More</span>
             </div>
           </li>
-            </>
-            
+            )
             }
             else{
                   return null
