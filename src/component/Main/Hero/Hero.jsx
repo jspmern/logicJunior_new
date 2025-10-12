@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <motion.section
       className="section hero hero-fullscreen has-bg-image hero-bg-top"
@@ -37,7 +40,8 @@ function Hero() {
           </motion.p>
 
           <motion.a
-            href="#"
+            role="button"
+            onClick={(e) => { e.preventDefault(); navigate('/courses'); }}
             className="btn has-before fade-in-delay-2"
             whileHover={{ scale: 1.07, boxShadow: "0 4px 24px rgba(46,196,182,0.18)" }}
             whileTap={{ scale: 0.96, rotate: -2 }}
