@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function Hero() {
   return (
     <motion.section
-      className="section hero hero-fullscreen has-bg-image"
+      className="section hero hero-fullscreen has-bg-image hero-bg-top"
       id="home"
       aria-label="home"
       style={{ backgroundImage: "url('/assets/images/hero-bg.svg')" }}
