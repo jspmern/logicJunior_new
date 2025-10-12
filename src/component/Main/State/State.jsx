@@ -3,10 +3,10 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 const statsData = [
-  { value: 29300, label: "Student Enrolled", color: "170, 75%, 41%" },
+  { value: 5000, label: "Student Enrolled", color: "170, 75%, 41%", suffix: "+" },
   { value: 32400, label: "Class Completed", color: "351, 83%, 61%" },
   { value: 100, label: "Satisfaction Rate", color: "260, 100%, 67%", suffix: "%" },
-  { value: 354, label: "Top Instructors", color: "42, 94%, 55%", suffix: "+" },
+  { value: 20, label: "Educators", color: "42, 94%, 55%", suffix: "+" },
 ];
 
 function State() {

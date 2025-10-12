@@ -121,8 +121,7 @@ const Contact = () => {
           <div className={styles.contactInfo}>
             <h3 className={styles.title}>Let's get in touch</h3>
             <p className={styles.text}>
-              Discover thousands of fun and interactive learning activities to
-              support your child's growth and learning process.
+              Counting down the minutes till our brain-boosting session 😊 see you soon...
             </p>
 
             <div className={styles.info}>

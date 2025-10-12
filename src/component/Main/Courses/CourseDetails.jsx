@@ -188,7 +188,7 @@ const CourseDetails = () => {
                     <span className="lj-card-price">{courseData.price || '$99'}</span>
                     <span className="lj-card-original-price">{courseData.originalPrice || '$149'}</span>
                   </div>
-                  <p className="lj-payment-note">One-time payment</p>
+                  <p className="lj-payment-note">Flexible Payment Options</p>
                 </div>
                 <button onClick={handleEnroll} className="lj-card-enroll-btn">
                   Enroll Now
@@ -212,7 +212,7 @@ const CourseDetails = () => {
                   </div>
                 </div>
               </div>
-              {/* Instructor Info */}
+              {/* Instructor Info
               <div className="lj-instructor-card">
                 <h3 className="lj-instructor-title">Your Instructor</h3>
                 <div className="lj-instructor-info">
@@ -229,7 +229,7 @@ const CourseDetails = () => {
                 <p className="lj-instructor-bio">
                   With over 8 years of experience teaching programming to children, Sarah has helped thousands of kids discover their passion for coding.
                 </p>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
