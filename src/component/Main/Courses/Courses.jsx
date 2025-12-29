@@ -104,7 +104,13 @@ function Courses() {
                     </a>
                   </h3>
                   <div className="wrapper" style={{ marginBottom: "20px" }}>
-                    <p>{course.description?.slice(0, 100)}...</p>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: course.description
+                          ? course.description.slice(0, 100) + "..."
+                          : "",
+                      }}
+                    />
                   </div>
                   <ul className="card-meta-list">
                     <li className="card-meta-item">

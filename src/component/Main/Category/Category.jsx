@@ -46,9 +46,12 @@ function Category() {
                   {_.title}
                 </a>
               </h3>
-              <p className="card-text">
-                 {_.description.split(0,10)+".."}
-              </p>
+              <p
+  className="card-text"
+  dangerouslySetInnerHTML={{
+    __html: _.description ? _.description.slice(0, 1000) + "..." : "",
+  }}
+/>
               <span className="card-badge">Know More</span>
             </div>
           </li>

@@ -10,7 +10,7 @@ export let courseDetails = [
     // "name": "11 Plus",
     "title": "Non Verbal Reasoning",
     "image": "/assets/images/nvr_image.jpg",
-    "description": "Non-verbal reasoning helps kids develop problem-solving, logical thinking, and pattern-recognition skills without relying on language. It strengthens memory, boosts creativity, and enhances cognitive flexibility, which supports success in academics, exams, and everyday problem-solving situations.",
+    "description": "Sharpen your child’s pattern recognition and problem-solving skills with engaging NVR exercises. <br /><b>Topics Covered:</b> Patterns, Shapes, Codes, Series, Matrices, Odd One Out, Sequences and many more... <br />Perfect preparation for <b>11+, 9+</b> exams at UK Grammar schools.",
     isTopCourse: true,
     thumbnail: "/assets/images/category-1.svg",
     duration: "6 Topics",
@@ -23,49 +23,49 @@ export let courseDetails = [
       duration: "8 weeks",
       level: "Beginner",
       price: "$***",
-      originalPrice: "$149",
+      originalPrice: "$100",
       rating: 4.8,
       students: 1250,
       instructor: "Sarah Johnson",
       instructorImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
       whatIncluded: [
-        "60+ interactive visual puzzle", 
+        "Real Time problem solving and discussions", 
         "Live instructor support",
-        "Certificate of completion",
-        "Lifetime access to sheets and mock tests",
+        "Topic Wise Practice",
+        "Assessment sheets and mock tests",
         "Mobile and desktop access",
-        "Parent progress reports"
+        "Child progress reports"
       ],
       modules: [
         {
           id: "1",
           title: "Visual Foundations",
           // duration: "1 week",
-          description: "Get started with the basics of programming and set up your coding environment.",
+          description: "",
           lessons: [
             "Lines, shapes, and symmetry basics",
-            "Mirror images & reflections", 
-            "Odd-one-out with simple figures"      
+            "Reflections", 
+            "Odd-one-out"      
           ]
         },
         {
           id: "2", 
           title: "Series & Sequences",
           // duration: "1 week",
-          description: "Learn about different types of data and how to store information in variables.",
+          description: "",
           lessons: [
             "Shape sequences (size, shading, rotation)",
             "Multi-step pattern changes",
-            "Speed drills for series recognition"
+            "Series and Pattern recognition"
           ]
         },
         {
           id: "3",
           title: "Analogy & Classification", 
           // duration: "1.5 weeks",
-          description: "Master functions and conditional statements to make your programs interactive.",
+          description: "",
           lessons: [
-            "Figure analogies (A:B :: C:?)",
+            "Figure analogies",
             "Grouping figures by common properties",
             "Double-rule analogies"
           ]
@@ -74,22 +74,21 @@ export let courseDetails = [
           id: "4",
           title: "Rotation & 3D Visualisation",
           // duration: "1 week", 
-          description: "Learn how to repeat actions efficiently using loops.",
+          description: "",
           lessons: [
             "2D figure rotations",
             "3D cube rotations and hidden faces",
-            "Painted-cube problems"
+            "Cubes and Nets problems"
           ]
         },
         {
           id: "5",
           title: "Nets & Paper Folding",
           // duration: "1.5 weeks",
-          description: "Connect your JavaScript knowledge to web pages and user interactions.", 
+          description: "", 
           lessons: [
             "Matching nets to 3D solids",
-            "Paper folding & punch-hole puzzles",
-            "Combining 3D shapes"
+            "Paper folding & punch-hole puzzles"
           ]
         },
         {
@@ -112,7 +111,7 @@ export let courseDetails = [
     // "name": "11 Plus",
     "title": "Verbal Reasoning",
     "image": "/assets/images/vr_image.png",
-    "description": "Verbal reasoning helps kids improve comprehension, vocabulary, and critical thinking skills. It trains them to analyze written information, draw conclusions, and understand relationships between ideas. These abilities enhance communication, boost confidence, and support academic success across subjects and real-life situations.",
+    "description": "Boost vocabulary and verbal reasoning with our interactive 11+ VR sessions. <br /><b>Topics Covered:</b> Synonyms & Antonyms, Codes, Odd One Out, Sequences & Series, Word Puzzles, Analogies and many more. <br />Helps children excel in <b>11+, 9+</b> tests for schools.",
     isTopCourse: true,
     thumbnail: "/assets/images/category-2.svg",
     duration: "6 Topics",
@@ -125,25 +124,25 @@ export let courseDetails = [
       duration: "8 weeks",
       level: "Beginner",
       price: "$***",
-      originalPrice: "$149",
+      originalPrice: "$100",
       rating: 4.8,
       students: 1250,
       instructor: "Sarah Johnson",
       instructorImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
       whatIncluded: [
-        "60+ interactive verbal reasoning exercises",
+        "Real Time problem solving and discussions", 
         "Live instructor support",
-        "Certificate of completion",
-        "Lifetime access to practice sheets & mock tests",
+        "Topic Wise Practice",
+        "Assessment sheets and mock tests",
         "Mobile and desktop access",
-        "Parent progress reports"
+        "Child progress reports"
       ],
       modules: [
         {
           id: "1",
           title: "Vocabulary & Word Skills",
           // duration: "1 week",
-          description: "Get started with the basics of programming and set up your coding environment.",
+          description: "",
           lessons: [
             "Synonyms, antonyms, and homophones",
             "Prefixes, suffixes, and root words", 
@@ -154,7 +153,7 @@ export let courseDetails = [
           id: "2", 
           title: "Letter & Word Patterns",
           // duration: "1 week",
-          description: "Learn about different types of data and how to store information in variables.",
+          description: "",
           lessons: [
             "Alphabetical order and letter sequences",
             "Odd-one-out with letters and words",
@@ -165,7 +164,7 @@ export let courseDetails = [
           id: "3",
           title: "Analogies & Classification", 
           // duration: "1.5 weeks",
-          description: "Master functions and conditional statements to make your programs interactive.",
+          description: "",
           lessons: [
             "Word analogies (cause–effect, part–whole, function)",
             "Word grouping and classification",
@@ -176,7 +175,7 @@ export let courseDetails = [
           id: "4",
           title: "Comprehension & Critical Thinking",
           // duration: "1 week", 
-          description: "Learn how to repeat actions efficiently using loops.",
+          description: "",
           lessons: [
             "Short passage comprehension",
             "Logical conclusions and sequencing"      
@@ -186,18 +185,19 @@ export let courseDetails = [
           id: "5",
           title: "Codes & Word Puzzles",
           // duration: "1.5 weeks",
-          description: "Connect your JavaScript knowledge to web pages and user interactions.", 
+          description: "", 
           lessons: [
             "Letter and number codes",
-            "Coded messages and cryptograms",
-            "Direction and instruction puzzles"
+            "Series and Pattern",
+            "Word Connetions",
+            "Letter coded sum"
           ]
         },
         {
           id: "6",
           title: "Exam Skills & Mock Tests",
           duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Timed GL & CEM-style practice papers",
             "Strategy sessions: elimination & time management", 
@@ -222,24 +222,24 @@ export let courseDetails = [
       duration: "8 weeks",
       level: "Beginner",
       price: "$***",
-      originalPrice: "$149",
+      originalPrice: "$100",
       rating: 4.8,
       students: 1250,
       instructor: "Sarah Johnson",
       instructorImage: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
       whatIncluded: [
-        "50+ interactive puzzles and activities", 
+        "1000+ interactive puzzles and activities", 
         "Live instructor guidance",
-        "Parent progress reports",
-        "Printable practice sheets",
-        "Certificate of completion"
+        "Child progress reports",
+        "Live Assessment and mock tests",
+        "Mobile and desktop access"
       ],
       modules: [
         {
           id: "1",
           title: "Logical Reasoning Basics",
           // duration: "1 week",
-          description: "Get started with the basics of programming and set up your coding environment.",
+          description: "",
           lessons: [
             "Pattern recognition and sequencing",
             "Simple cause–effect puzzles", 
@@ -252,7 +252,7 @@ export let courseDetails = [
           id: "2", 
           title: "Numerical & Analytical Skills",
           // duration: "1 week",
-          description: "Learn about different types of data and how to store information in variables.",
+          description: "",
           lessons: [
             "Number, patterns and series",
             "Simple arithmetic word problems",
@@ -265,7 +265,7 @@ export let courseDetails = [
           id: "3",
           title: "Spatial & Visual Reasoning", 
           // duration: "1.5 weeks",
-          description: "Master functions and conditional statements to make your programs interactive.",
+          description: "",
           lessons: [
             "2D and 3D shape manipulation",
             "Mirror and water reflections",
@@ -278,12 +278,12 @@ export let courseDetails = [
           id: "4",
           title: "Memory & Concentration",
           // duration: "1 week", 
-          description: "Learn how to repeat actions efficiently using loops.",
+          description: "",
           lessons: [
             "Short- and long-term memory games",
             "Visual recall grids",
             "Sound and sequence recall",
-            "Mnemonic techniques",
+            "Photographic memory exercises",
             "Timed focus challenges"
           ]
         },
@@ -291,12 +291,12 @@ export let courseDetails = [
           id: "5",
           title: "Critical & Creative Thinking",
           // duration: "1.5 weeks",
-          description: "Connect your JavaScript knowledge to web pages and user interactions.", 
+          description: "", 
           lessons: [
             "Lateral thinking riddles",
             "“What if” scenario problem solving",
             "Brainstorming alternative uses",
-            "Decision-making under constraints",
+            "Situational puzzles",
             "Debrief discussions to explain reasoning"
           ]
         },
@@ -304,7 +304,7 @@ export let courseDetails = [
           id: "6",
           title: "Integrated IQ Challenges",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Mixed-topic IQ test simulations",
             "Group problem-solving projects", 
@@ -317,7 +317,7 @@ export let courseDetails = [
           id: "7",
           title: "Additional Topics",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Visual Reasoning → Patterns, sequences, and analogy patterns",
             "Elements moving upwards, downwards, clockwise, anti-clockwise",
@@ -347,7 +347,7 @@ export let courseDetails = [
     isTopCourse: true,
     thumbnail: "/assets/images/category-3.svg",
     price: "$***",
-    originalPrice: "$149",
+    originalPrice: "$100",
     badge: "Intermediate",
     courseData :{
       // title: "Complete JavaScript Programming for Kids",
@@ -356,8 +356,8 @@ export let courseDetails = [
       // image: "https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       duration: "8 weeks",
       level: "Beginner",
-      price: "$99",
-      originalPrice: "$149",
+      price: "$***",
+      originalPrice: "$100",
       rating: 4.8,
       students: 1250,
       instructor: "Sarah Johnson",
@@ -367,14 +367,14 @@ export let courseDetails = [
         "Improve voice modulation, clarity, and fluency", 
         "Master body language, gestures, and stage presence",
         "Fun interactive activities and speech practice",
-        "Certificate of completion"
+        "Child progress reports"
       ],
       modules: [
         {
           id: "1",
           title: "Foundations of Public Speaking",
           // duration: "1 week",
-          description: "Get started with the basics of programming and set up your coding environment.",
+          description: "",
           lessons: [
             "Understanding public speaking and its importance",
             "Overcoming fear and building confidence", 
@@ -387,7 +387,7 @@ export let courseDetails = [
           id: "2", 
           title: "Speech Writing & Structure",
           // duration: "1 week",
-          description: "Learn about different types of data and how to store information in variables.",
+          description: "",
           lessons: [
             "Organizing ideas: Introduction, Body, Conclusion",
             "Writing clear and simple language",
@@ -400,7 +400,7 @@ export let courseDetails = [
           id: "3",
           title: "Voice, Tone & Expression", 
           // duration: "1.5 weeks",
-          description: "Master functions and conditional statements to make your programs interactive.",
+          description: "",
           lessons: [
             "Voice modulation: pitch, volume, tone",
             "Emphasizing key points",
@@ -413,7 +413,7 @@ export let courseDetails = [
           id: "4",
           title: "Presentation Skills & Body Language",
           // duration: "1 week", 
-          description: "Learn how to repeat actions efficiently using loops.",
+          description: "",
           lessons: [
             "Posture, gestures, confident stage movement",
             "Hands, facial expressions, gestures effectively",
@@ -426,7 +426,7 @@ export let courseDetails = [
           id: "5",
           title: "Interactive Speaking Activities",
           // duration: "1.5 weeks",
-          description: "Connect your JavaScript knowledge to web pages and user interactions.", 
+          description: "", 
           lessons: [
             "Impromptu speaking",
             "Storytelling and narratives",
@@ -439,7 +439,7 @@ export let courseDetails = [
           id: "6",
           title: "Advanced Speaking & Confidence Building",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Persuasive speech techniques",
             "Handling questions", 
@@ -452,7 +452,7 @@ export let courseDetails = [
           id: "7",
           title: "Additional Key Elements",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Confidence & Self-Esteem",
             "Critical Thinking",
@@ -490,18 +490,17 @@ export let courseDetails = [
       whatIncluded: [
         "50+ hands-on coding exercises", 
         "Live instructor support",
-        "Certificate of completion",
-        "Lifetime access to materials",
+        "Real Time problem solving and discussions",
         "Mobile and desktop access",
         "Interactive coding playground",
-        "Parent progress reports"
+        "Child progress reports"
       ],
       modules: [
         {
           id: "1",
           title: "Getting Started with Scratch",
           // duration: "1 week",
-          description: "Get started with the basics of programming and set up your coding environment.",
+          description: "",
           lessons: [
             "Interface tour",
             "Moving sprite, backgrounds, costumes", 
@@ -512,7 +511,7 @@ export let courseDetails = [
           id: "2", 
           title: "Events & Sequencing",
           // duration: "1 week",
-          description: "Learn about different types of data and how to store information in variables.",
+          description: "",
           lessons: [
             "Event blocks",
             "Simple sequences & timing",
@@ -523,7 +522,7 @@ export let courseDetails = [
           id: "3",
           title: "Loops & Conditions", 
           // duration: "1.5 weeks",
-          description: "Master functions and conditional statements to make your programs interactive.",
+          description: "",
           lessons: [
             "Forever/repeat loops",
             "If/else conditions",
@@ -534,7 +533,7 @@ export let courseDetails = [
           id: "4",
           title: "Variables & Operators",
           // duration: "1 week", 
-          description: "Learn how to repeat actions efficiently using loops.",
+          description: "",
           lessons: [
             "Variables for score/lives/timers",
             "Operators (random, calculations)",
@@ -545,7 +544,7 @@ export let courseDetails = [
           id: "5",
           title: "Broadcasting & Multiple Sprites",
           // duration: "1.5 weeks",
-          description: "Connect your JavaScript knowledge to web pages and user interactions.", 
+          description: "", 
           lessons: [
             "Messages between sprites",
             "Cloning",
@@ -556,7 +555,7 @@ export let courseDetails = [
           id: "6",
           title: "Animation & Sound Effects",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Costume changes",
             "Sound editing & syncing", 
@@ -567,7 +566,7 @@ export let courseDetails = [
           id: "7",
           title: "Advanced Game Development",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Gravity, scoring, lives",
             "Levels with backdrops", 
@@ -578,7 +577,7 @@ export let courseDetails = [
           id: "8",
           title: "Storytelling & Interactive Art",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Storyline & dialogues",
             "Projects: Adventure Story, Comic Strip"
@@ -588,7 +587,7 @@ export let courseDetails = [
           id: "9",
           title: "Real-World Simulations & STEM Links",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Interactive models",
             "Projects: Traffic Light, Solar System, Math Quiz"
@@ -598,7 +597,7 @@ export let courseDetails = [
           id: "10",
           title: "Final Showcase",
           // duration: "2 weeks",
-          description: "Apply everything you've learned by building exciting projects.",
+          description: "",
           lessons: [
             "Capstone game/animation"
           ]
