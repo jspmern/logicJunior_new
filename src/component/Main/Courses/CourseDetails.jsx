@@ -106,7 +106,7 @@ const CourseDetails = () => {
               {/* Course Description */}
               <section className="lj-section">
                 <h2 className="lj-section-title">About This Course</h2>
-                <p className="lj-description">{findCourse.description || courseData.description}</p>
+                <p className="lj-description">{<span dangerouslySetInnerHTML={{ __html: findCourse.description }} /> || <span dangerouslySetInnerHTML={{ __html: courseData.description }} />}</p>
               </section>
               {/* What's Included */}
               <section className="lj-section">
@@ -196,11 +196,11 @@ const CourseDetails = () => {
                 <div className="lj-card-features">
                   <div className="lj-feature-item">
                     <span className="lj-feature-icon">🛟</span>
-                    <span>24/7 instructor support</span>
+                    <span>1 on 1 session</span>
                   </div>
                   <div className="lj-feature-item">
                     <span className="lj-feature-icon">📱</span>
-                    <span>Mobile and desktop access</span>
+                    <span>Group Sessions</span>
                   </div>
                   <div className="lj-feature-item">
                     <span className="lj-feature-icon">⬇️</span>
@@ -208,7 +208,7 @@ const CourseDetails = () => {
                   </div>
                   <div className="lj-feature-item">
                     <span className="lj-feature-icon">🌐</span>
-                    <span>Lifetime access</span>
+                    <span>Live and Recorded Session</span>
                   </div>
                 </div>
               </div>

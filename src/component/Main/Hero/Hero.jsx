@@ -34,9 +34,9 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Discover thousands of fun and interactive learning activities to
-            support your child&#39;s growth and learning process. Activating left and right
-            brain power for smarter learning
+            Unlock your child's full potential with <span style={{ color: "red" }}>Logic Junior!</span><br />
+            Discover thousands of fun, interactive activities that boost memory power, spark creative
+            thinking, and strengthen logical skills—all while your child learns through play.
           </motion.p>
 
           <motion.a
