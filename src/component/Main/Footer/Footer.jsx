@@ -34,8 +34,8 @@ function Footer() {
             </div>
             <div className="wrapper">
               <span className="span">Email:</span>
-              <a href="mailto:info@eduweb.com" className="footer-link">
-                info@eduweb.com
+              <a href="mailto:logicjuniorkids@gmail.com" className="footer-link">
+                logicjuniorkids@gmail.com
               </a>
             </div>
           </div>

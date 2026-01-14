@@ -133,11 +133,11 @@ const Contact = () => {
                 <img src={emailIcon} className={styles.icon} alt="email" />
                 <p>
                   <a
-                    href="mailto:info@eduweb.com"
+                    href="mailto:logicjuniorkids@gmail.com"
                     className={styles.inlineLink}
-                    aria-label="send email to info@eduweb.com"
+                    aria-label="send email to logicjuniorkids@gmail.com"
                   >
-                    info@eduweb.com
+                    logicjuniorkids@gmail.com
                   </a>
                 </p>
               </div>

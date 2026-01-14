@@ -47,7 +47,7 @@ function AnimatedRoutes() {
                 <Category />
                 <About />
                 <Courses />
-                <Video />
+                {/* <Video /> */}
                 <State />
                 <Contact />
                 <Footer />
