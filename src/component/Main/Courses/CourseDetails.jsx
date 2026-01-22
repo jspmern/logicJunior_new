@@ -2,12 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
  import "./CourseDetails.css"
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { courseDetails } from '../../../utils';
 const CourseDetails = () => {
   const [openModules, setOpenModules] = useState(new Set());
   const { courseId } = useParams();
   const [findCourse, setFindCourse] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     setFindCourse(courseDetails.find(course => course.id === courseId));
   }, [courseId]);
@@ -25,7 +26,7 @@ const CourseDetails = () => {
   // ...existing code...
 
   const handleEnroll = () => {
-    alert('Enrollment functionality would be implemented here!');
+    navigate('/contact');
   };
   if (!findCourse) return <div>Course not found</div>;
   const courseData = findCourse.courseData || {};
