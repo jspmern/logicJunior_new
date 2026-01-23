@@ -128,7 +128,17 @@ function Courses() {
           ))}
         </Swiper>
 
-        <a href="#" className="btn has-before" style={{ marginTop: "2rem" }}>
+        {/* changed: navigate to /courses when clicked */}
+        <a
+          href="#"
+          className="btn has-before"
+          style={{ marginTop: "2rem" }}
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/courses");
+          }}
+          aria-label="Browse more courses"
+        >
           <span className="span">Browse more courses</span>
           <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
         </a>
