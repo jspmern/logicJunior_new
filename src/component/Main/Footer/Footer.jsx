@@ -13,7 +13,7 @@ function Footer() {
             <Link to="/" className="logo">
             {/* //TO-DO  */}
               {/* <img
-                src="/assets/images/logo.svg"
+                src="/assets/images/logic_junior.svg"
                 width="162"
                 height="50"
                 alt="Logic Junior logo"

@@ -71,10 +71,10 @@ function Header() {
         >
           <Link to="/" className="logo">
             <motion.img
-              src="/assets/images/logo.svg"
+              src="/assets/images/logic_junior.svg"
               width="162"
               height="50"
-              alt="EduWeb logo"
+              alt="LogicJunior logo"
               whileHover={{ scale: 1.08, rotate: -2 }}
               transition={{ type: "spring", stiffness: 200 }}
             />
@@ -85,10 +85,10 @@ function Header() {
           <div className="wrapper">
             <Link to="/" className="logo">
               <img
-                src="/assets/images/logo.svg"
+                src="/assets/images/logic_junior.svg"
                 width="162"
                 height="50"
-                alt="EduWeb logo"
+                alt="LogicJunior logo"
               />
             </Link>
             <button
