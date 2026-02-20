@@ -12,6 +12,7 @@ import Contact from "./component/Main/Contact/Contact";
 import Courses from "./component/Main/Courses/Courses";
 import CourseDetails from "./component/Main/Courses/CourseDetails";
 import Footer from "./component/Main/Footer/Footer";
+import PuzzleGamePage from "./component/Main/PuzzleGamePage";
 import Hero from "./component/Main/Hero/Hero";
 import State from "./component/Main/State/State";
 import Video from "./component/Main/Video/Video";
@@ -61,6 +62,7 @@ function AnimatedRoutes() {
           {/* <Route path="/blog" element={<><Blog /><Footer /><BackToTop /></>} /> */}
           <Route path="/testseries" element={<><TestSeries /><Footer /><BackToTop /></>} />
           <Route path="/contact" element={<><Contact /><Footer /><BackToTop /></>} />
+          <Route path="/games/puzzle" element={<><PuzzleGamePage /><Footer /><BackToTop /></>} />
           <Route path="*" element={<><NotFound /><Footer /><BackToTop /></>} />
         </Routes>
       </motion.div>
